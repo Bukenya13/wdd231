@@ -1,0 +1,71 @@
+/* Desktop Responsive Styles (min-width: 900px) */
+
+main {
+    padding: 3rem 1rem;
+}
+
+.about-wrapper {
+    padding: 4rem;
+    gap: 5rem;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+}
+
+.courses-header {
+    gap: 2rem;
+}
+
+.courses-header h2 {
+    font-size: 3rem;
+}
+
+.courses-container {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.course-card {
+    padding: 2.5rem;
+}
+
+.course-title {
+    font-size: 1.4rem;
+}
+
+.filter-buttons {
+    gap: 1.5rem;
+}
+
+.filter-btn {
+    padding: 0.85rem 2rem;
+    font-size: 1.05rem;
+}
+
+.social-link {
+    width: 70px;
+    height: 70px;
+}
+
+.social-link svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Enhanced hover effects for desktop */
+.course-card {
+    cursor: pointer;
+}
+
+.course-card:active {
+    transform: translateY(-12px);
+}
+
+.nav-menu a {
+    padding: 1.2rem 2rem;
+}
+
+.nav-menu li {
+    flex: initial;
+}

@@ -1,0 +1,268 @@
+/* Mobile Responsive Styles (max-width: 899px) */
+
+main {
+    padding: 1.5rem 1rem;
+}
+
+/* Header adjustments */
+.header-content {
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.header-text h3 {
+    font-size: 1.2rem;
+}
+
+.student-name {
+    font-size: 0.85rem;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Navigation */
+.nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-menu.active {
+    max-height: 500px;
+}
+
+.nav-menu li {
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.nav-menu li:last-child {
+    border-bottom: none;
+}
+
+.nav-menu a {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background-color: #f8f9fa;
+    color: #084e7c;
+}
+
+/* About section */
+.about-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.about-text h2 {
+    font-size: 1.8rem;
+}
+
+.about-text p {
+    font-size: 0.95rem;
+}
+
+.cta-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem 1rem;
+}
+
+/* Courses section */
+.courses-header {
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.courses-header h2 {
+    font-size: 1.8rem;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+}
+
+.credits-badge {
+    width: 100%;
+}
+
+/* Filter buttons */
+.filter-buttons {
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    flex: 1;
+    min-width: 90px;
+}
+
+/* Courses grid */
+.courses-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.course-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.course-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.course-code {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.course-title {
+    font-size: 1.1rem;
+}
+
+.course-description {
+    font-size: 0.9rem;
+}
+
+/* Social links */
+.social-links {
+    gap: 1rem;
+    padding: 2rem 1rem;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+}
+
+.social-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Footer */
+footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Tablet adjustments (600px - 899px) */
+@media (min-width: 600px) {
+    main {
+        padding: 2rem 1rem;
+    }
+
+    .about-wrapper {
+        padding: 2rem;
+    }
+
+    .courses-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .filter-buttons {
+        gap: 1rem;
+    }
+
+    .filter-btn {
+        flex: initial;
+        min-width: auto;
+    }
+
+    .cta-buttons {
+        flex-direction: row;
+    }
+
+    .btn {
+        width: auto;
+    }
+}
+
+/* Small tablets (450px - 599px) */
+@media (max-width: 599px) {
+    .course-card {
+        padding: 1.25rem;
+    }
+
+    .course-header {
+        margin-bottom: 0.75rem;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+
+    .about-wrapper {
+        gap: 1.5rem;
+    }
+}

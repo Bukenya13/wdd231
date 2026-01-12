@@ -1,0 +1,93 @@
+/* ========================================
+   LARGE SCREEN STYLES (Desktop)
+   Min-width: 1024px
+   ======================================== */
+
+@media (min-width: 1024px) {
+    
+    /* Header & Navigation */
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav-menu li {
+        margin: 0 1rem;
+    }
+
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    /* Main Content */
+    main {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 600px;
+        padding-right: 5rem;
+    }
+
+    .hero-content {
+        max-width: 500px;
+        padding: 4rem 3rem;
+    }
+
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 18px 40px;
+        font-size: 1.2rem;
+    }
+
+    /* Events Grid */
+    .events-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Weather Section */
+    .weather-container {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .weather-current img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .weather-info h3 {
+        font-size: 2.5rem;
+    }
+
+    /* Member Spotlight */
+    #spotlight-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .spotlight-card img {
+        max-width: 250px;
+        height: 180px;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 2fr 1fr;
+    }
+}
