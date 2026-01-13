@@ -73,7 +73,10 @@ header {
 }
 
 .header-text {
-    .button {
+    display: flex;
+    flex-direction: column;
+}
+.button {
         display: inline-block;
         padding: 0.6rem 1rem;
         border-radius: 6px;
@@ -81,24 +84,22 @@ header {
         font-weight: 600;
         transition: var(--transition);
     }
-    .button--primary {
+.button--primary {
         background: var(--primary);
         color: white;
     }
-    .button--primary:hover {
+.button--primary:hover {
         filter: brightness(0.95);
     }
-    .button--secondary {
+.button--secondary {
         background: transparent;
         color: var(--primary);
         border: 1px solid rgba(0,0,0,0.08);
     }
-    .button--secondary:hover {
+.button--secondary:hover {
         background: rgba(0,0,0,0.02);
     }
-    gap: 6px;
-    padding: 8px;
-}
+/* Hamburger Menu */
 
 .hamburger span {
     width: 25px;
