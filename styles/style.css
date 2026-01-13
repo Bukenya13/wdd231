@@ -73,29 +73,29 @@ header {
 }
 
 .header-text {
-    flex: 1;
-}
-
-.header-text h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-    letter-spacing: -0.5px;
-}
-
-.student-name {
-    font-size: 0.95rem;
-    opacity: 0.95;
-    font-weight: 500;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    background: none;
-    border: none;
-    cursor: pointer;
+    .button {
+        display: inline-block;
+        padding: 0.6rem 1rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+    .button--primary {
+        background: var(--primary);
+        color: white;
+    }
+    .button--primary:hover {
+        filter: brightness(0.95);
+    }
+    .button--secondary {
+        background: transparent;
+        color: var(--primary);
+        border: 1px solid rgba(0,0,0,0.08);
+    }
+    .button--secondary:hover {
+        background: rgba(0,0,0,0.02);
+    }
     gap: 6px;
     padding: 8px;
 }
@@ -210,7 +210,7 @@ main {
     margin-top: 2rem;
 }
 
-.btn {
+.button {
     padding: 0.75rem 1.5rem;
     border-radius: 10px;
     text-decoration: none;
@@ -222,24 +222,24 @@ main {
     font-size: 1rem;
 }
 
-.btn-primary {
+.button--primary {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
     box-shadow: var(--shadow-md);
 }
 
-.btn-primary:hover {
+.button--primary:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
 
-.btn-secondary {
+.button--secondary {
     background: white;
     color: var(--primary);
     border: 2px solid var(--primary);
 }
 
-.btn-secondary:hover {
+.button--secondary:hover {
     background: var(--primary);
     color: white;
     transform: translateY(-3px);
@@ -473,9 +473,16 @@ main {
 .social-links {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1.5rem;
-    padding: 3rem 1rem;
+    padding: 1.5rem;
     flex-wrap: wrap;
+    max-width: 840px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
 }
 
 .social-link {
@@ -489,7 +496,7 @@ main {
     color: var(--primary);
     transition: var(--transition);
     box-shadow: var(--shadow-md);
-    border: 2px solid transparent;
+    border: 2px solid rgba(0,0,0,0.06);
 }
 
 .social-link:hover {

@@ -1,5 +1,7 @@
 /* Desktop Responsive Styles (min-width: 900px) */
 
+@media (min-width: 900px) {
+
 main {
     padding: 3rem 1rem;
 }
@@ -68,4 +70,6 @@ main {
 
 .nav-menu li {
     flex: initial;
+}
+
 }
