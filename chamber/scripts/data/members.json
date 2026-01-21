@@ -1,0 +1,74 @@
+   [
+  {
+    "name": "Kampala Breweries Ltd",
+    "address": "Plot 12, Industrial Area, Kampala",
+    "phone": "+256 312 456 789",
+    "website": "https://kampalabreweries.ug",
+    "image": "brewery.jpg",
+    "membership": "Gold"
+  },
+  {
+    "name": "Uganda Commercial Bank",
+    "address": "Speke Road, Kampala CBD",
+    "phone": "+256 414 234 567",
+    "website": "https://ucbank.ug",
+    "image": "bank.jpg",
+    "membership": "Platinum"
+  },
+  {
+    "name": "Green Fields Farm",
+    "address": "Mityana Road, Wakiso District",
+    "phone": "+256 772 345 678",
+    "website": "https://greenfieldsfarm.ug",
+    "image": "farm.jpg",
+    "membership": "Silver"
+  },
+  {
+    "name": "Kampala Tech Solutions",
+    "address": "Level 3, ICT Hub, Nakawa",
+    "phone": "+256 756 987 654",
+    "website": "https://kampalatech.ug",
+    "image": "tech.jpg",
+    "membership": "Gold"
+  },
+  {
+    "name": "Pearl of Africa Hotel",
+    "address": "1 Kintu Road, Nakasero",
+    "phone": "+256 414 333 111",
+    "website": "https://pearlhotel.ug",
+    "image": "hotel.jpg",
+    "membership": "Platinum"
+  },
+  {
+    "name": "East African Textiles",
+    "address": "Plot 45, Jinja Road, Kampala",
+    "phone": "+256 414 222 333",
+    "website": "https://eatextiles.ug",
+    "image": "textiles.jpg",
+    "membership": "Silver"
+  },
+  {
+    "name": "Capital Pharmacy Ltd",
+    "address": "Kampala Road, City Centre",
+    "phone": "+256 414 777 888",
+    "website": "https://capitalpharmacy.ug",
+    "image": "pharmacy.jpg",
+    "membership": "Bronze"
+  },
+  {
+    "name": "Uganda Cargo Movers",
+    "address": "Entebbe Road, Kampala",
+    "phone": "+256 312 555 666",
+    "website": "https://ugandacargo.ug",
+    "image": "logistics.jpg",
+    "membership": "Gold"
+  },
+  {
+    "name": "Kampala Legal Associates",
+    "address": "Colville Street, Kampala",
+    "phone": "+256 414 888 999",
+    "website": "https://kampalalegal.ug",
+    "image": "law.jpg",
+    "membership": "Silver"
+  }
+]

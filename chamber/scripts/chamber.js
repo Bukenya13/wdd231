@@ -364,3 +364,60 @@ PROGRAM FLOW:
    - Hover over links → CSS animations trigger
 
 ======================================== */
+/* ========================================
+   FETCH AND DISPLAY JSON MEMBERS
+   ======================================== */
+
+// Function to fetch members from JSON file
+async function loadMembers() {
+    try {
+        // fetch() = gets data from a file/URL
+        // 'await' = waits for the fetch to complete
+        const response = await fetch('./members.json');
+        
+        // Check if fetch was successful
+        if (!response.ok) {
+            throw new Error('Failed to load members');
+        }
+        
+        // Convert response to JSON
+        const members = await response.json();
+        
+        // Call function to display the members
+        displayMembers(members);
+        
+    } catch (error) {
+        // If something goes wrong, show error
+        console.error('Error loading members:', error);
+    }
+}
+
+// Function to display members on the page
+function displayMembers(members) {
+    const container = document.getElementById('members-container');
+    
+    // Loop through each member
+    members.forEach(member => {
+        // Create member card
+        const memberCard = document.createElement('div');
+        memberCard.className = 'member-card';
+        
+        // Set HTML content
+        memberCard.innerHTML = `
+            <img src="./images/${member.image}" alt="${member.name}">
+            <h3>${member.name}</h3>
+            <p><strong>Address:</strong> ${member.address}</p>
+            <p><strong>Phone:</strong> ${member.phone}</p>
+            <p><strong>Level:</strong> ${member.membership}</p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
+        `;
+        
+        // Add to page
+        container.appendChild(memberCard);
+    });
+}
+
+// Load members when page loads
+window.addEventListener('DOMContentLoaded', () => {
+    loadMembers();
+});
