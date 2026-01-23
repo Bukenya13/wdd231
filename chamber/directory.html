@@ -1,245 +1,223 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
+<html lang="en">
 <head>
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Kampala Chamber of Commerce - Promoting business growth and economic development in Uganda's capital. Join 500+ members driving Kampala's economy.">
-    <meta name="keywords" content="Kampala, Uganda, Chamber of Commerce, business networking, economic development, trade, investment">
-    <meta name="author" content="Bukenya Larence">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="googlebot" content="index, follow">
+    <!-- Title & Description -->
+    <title>Kampala Chamber of Commerce | Business Directory</title>
+    <meta name="description" content="Official directory of Kampala Chamber of Commerce members. Discover businesses, services, and commercial opportunities in Uganda.">
+    <meta name="keywords" content="Kampala, Uganda, business, commerce, chamber, directory, trade, investment, Africa">
     
-    <!-- Title -->
-    <title>Kampala Chamber of Commerce | Driving Business Growth in Uganda</title>
+    <!-- Author Information -->
+    <meta name="author" content="Bukkenya Lawrence">
+    <meta name="designer" content="Bukkenya Lawrence">
+    <meta name="developer" content="Bukkenya Lawrence">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Kampala Chamber of Commerce | Uganda's Premier Business Network">
-    <meta property="og:description" content="Join Uganda's leading business community. Connect with 500+ companies, access exclusive resources, and grow your business in Kampala.">
-    <meta property="og:image" content="https://Bukenya13.github.io/images/og-kampala-commerce.jpg">
-
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Kampala Chamber of Commerce - Business Networking Event">
-    <meta property="og:url" content="https://Bukenya13.github.io">
- 
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kampala Chamber of Commerce | Business Directory">
+    <meta property="og:description" content="Official directory of Kampala Chamber of Commerce members. Connect with businesses in Uganda.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kampalachamber.ug">
     <meta property="og:site_name" content="Kampala Chamber of Commerce">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=630&fit=crop">
+    <meta property="og:image:alt" content="Kampala business district view">
     
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kampala Chamber of Commerce | Business Growth Network">
-    <meta name="twitter:description" content="Connect, collaborate, and grow with Uganda's business leaders. Join the Kampala Chamber of Commerce today.">
-    <meta name="twitter:image" content="https://Bukenya13.github.io/images/twitter-kampala-commerce.jpg">
-    <meta name="twitter:site" content="@KampalaChamber">
-    <meta name="twitter:creator" content="@KampalaChamber">
+    <meta name="twitter:title" content="Kampala Chamber of Commerce | Business Directory">
+    <meta name="twitter:description" content="Official directory of Kampala Chamber of Commerce members.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=630&fit=crop">
+    <meta name="twitter:creator" content="@BukkenyaLawrence">
     
-    <!-- Additional Meta -->
-    <meta name="theme-color" content="#1a4a8f">
-    <meta name="msapplication-TileColor" content="#1a4a8f">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     
-    <!-- Favicon Links -->
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
-    <link rel="manifest" href="./site.webmanifest">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://Bukenya13.github.io">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="./styles/normalize.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/weather.css">
     <link rel="stylesheet" href="./styles/directory.css">
+    <link rel="stylesheet" href="./styles/small.css" media="screen and (max-width: 600px)">
+    <link rel="stylesheet" href="./styles/large.css" media="screen and (min-width: 1200px)">
+    <link rel="stylesheet" href="./styles/larger.css" media="screen and (min-width: 1400px)">
     
-    <!-- Scripts -->
-    <script defer src=".scripts/chamber.js"></script>
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Kampala Chamber of Commerce",
+        "url": "https://www.kampalachamber.ug",
+        "description": "Official business directory for Kampala Chamber of Commerce members",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot 10A, Acacia Avenue",
+            "addressLocality": "Kampala",
+            "addressCountry": "Uganda"
+        }
+    }
+    </script>
 </head>
-<body class="chamber-page">
-    <header>
-        <div class="header-content">
-            <div class="logo-area">
-                <svg class="logo" width="60" height="60" viewBox="0 0 60 60">
-                    <circle cx="30" cy="30" r="28" fill="#1a472a"/>
-                    <path d="M30 10 L45 25 L40 25 L40 40 L35 40 L35 30 L25 30 L25 40 L20 40 L20 25 L15 25 Z" fill="#f9dc5c"/>
-                </svg>
-                <div class="site-title">
-                    <h1>Kampala Chamber of Commerce</h1>
-                    <p class="tagline">Building Business. Building Community.</p>
-                </div>
-            </div>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav" role="navigation">
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <div class="nav-logo">
+            <img src="images/chamber-logo.png" alt="Kampala Chamber of Commerce" height="40">
+            <span>Kampala Chamber</span>
         </div>
-        <button id="menu-button" aria-label="Toggle navigation">☰</button>
-    </header>
-
-    <nav id="main-nav">
-        <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Discover</a></li>
-            <li><a href="#">Directory</a></li>
-            <li><a href="#">Join</a></li>
+        
+        <ul class="nav-links" id="nav-links">
+            <li><a href="/" class="active">🏠 Home</a></li>
+            <li><a href="/directory">📇 Directory</a></li>
+            <li><a href="/about">ℹ️ About</a></li>
+            <li><a href="/events">📅 Events</a></li>
+            <li><a href="/membership">⭐ Membership</a></li>
+            <li><a href="/contact">📞 Contact</a></li>
+            <li class="nav-extra">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </li>
         </ul>
+        
+        <div class="mobile-overlay" id="mobile-overlay"></div>
     </nav>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Welcome to Uganda's Business Hub</h2>
-                <p>Join the premier network of businesses driving economic growth in Kampala and beyond</p>
-                <a href="#" class="cta-button">Become a Member</a>
-            </div>
-        </section>
-
-        <section class="info-grid">
-            <h2 class="visually-hidden">Chamber Information</h2>
-            <div class="card events-card">
-                <h3>📅 Upcoming Events</h3>
-                <div class="event-item">
-                    <h4>Business Networking Breakfast</h4>
-                    <p>January 15, 2026 | Serena Hotel</p>
-                    <p>Connect with local entrepreneurs over breakfast</p>
-                </div>
-                <div class="event-item">
-                    <h4>Export Training Workshop</h4>
-                    <p>January 22, 2026 | Chamber Office</p>
-                    <p>Learn strategies for expanding into regional markets</p>
-                </div>
-                <div class="event-item">
-                    <h4>Annual Business Summit</h4>
-                    <p>February 5, 2026 | Kampala Conference Centre</p>
-                    <p>Join 500+ business leaders for our flagship event</p>
-                </div>
-            </div>
-
-            <div class="card weather-card">
-                <h3>🌤️ Current Weather</h3>
-                <div id="weather-content">
-                    <div class="weather-display">
-                        <div class="temperature">
-                            <span id="current-temp">24</span>°C
-                        </div>
-                        <p id="weather-desc">Partly Cloudy</p>
-                        <div class="weather-details">
-                            <p>High: <span id="high-temp">28</span>°C</p>
-                            <p>Low: <span id="low-temp">19</span>°C</p>
-                            <p>Humidity: <span id="humidity">65</span>%</p>
-                        </div>
-                        <!-- Replace your existing weather-card div with this: -->
-<div class="card weather-card">
-    <h3>Weather</h3>
     
-    <!-- Current Weather -->
-    <div class="weather-current">
-        <h4>Current Weather</h4>
-        <div class="weather-temp">75° F</div>
-        <div class="weather-desc">Party Cloudy</div>
-        <div class="weather-details">
-            <div>High: 85°</div>
-            <div>Low: 52°</div>
-            <div>Humidity: 34%</div>
-            <div>Sunrise: 7:30am</div>
-            <div>Sunset: 9:59pm</div>
-        </div>
-    </div>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <!-- Weather Forecast -->
-    <div class="weather-forecast">
-        <h4>Weather Forecast</h4>
-        <div class="forecast-days">
-            <div class="forecast-day">
-                <div class="day">Today</div>
-                <div class="temp"><strong>90°F</strong></div>
-            </div>
-            <div class="forecast-day">
-                <div class="day">Wednesday</div>
-                <div class="temp"><strong>89°F</strong></div>
-            </div>
-            <div class="forecast-day">
-                <div class="day">Thursday</div>
-                <div class="temp"><strong>68°F</strong></div>
+    <!-- Header -->
+    <header class="main-header" role="banner">
+        <div class="header-content">
+            <h1>Kampala Chamber of Commerce</h1>
+            <p class="tagline">Connecting Businesses, Driving Growth</p>
+            
+            <div class="author-attribution">
+                <p>Website by: <strong>Bukkenya Lawrence</strong></p>
+                <img src="images/lawrence.png" alt="Bukkenya Lawrence" class="author-avatar">
             </div>
         </div>
-    </div>
-</div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Weather Widget -->
+        <section class="weather-section">
+            <div class="weather-widget">
+                <div class="weather-header">
+                    <h2>🌤️ Kampala Weather</h2>
+                    <button id="refresh-weather" class="refresh-btn" title="Refresh weather">🔄</button>
+                </div>
+                <div id="weather-info" class="weather-info">
+                    <div class="weather-loading">
+                        <div class="weather-spinner"></div>
+                        <p>Loading weather...</p>
                     </div>
                 </div>
             </div>
-
-            <div class="card spotlight-card">
-                <h3>✨ Member Spotlights</h3>
-                <div id="spotlight-container"></div>
-            </div>
         </section>
-
-        <section class="call-to-action">
-            <h2>Ready to Grow Your Business?</h2>
-            <p>Join over 500 businesses benefiting from chamber membership</p>
-            <div class="cta-buttons">
-                <a href="#" class="cta-button primary">Join Now</a>
-                <a href="#" class="cta-button secondary">Learn More</a>
+        
+        <!-- Search -->
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="business-search" class="search-input" placeholder="Search businesses by name, category, or location...">
+                <button class="search-btn">🔍 Search</button>
+            </div>
+            
+            <div class="filter-controls">
+                <select id="category-filter" class="filter-select" title="Filter businesses by category">
+                    <option value="">All Categories</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Commerce">Commerce</option>
+                    <option value="Tourism">Tourism</option>
+                    <option value="Agriculture">Agriculture</option>
+                    <option value="Transport">Transport</option>
+                </select>
+                
+                <select id="membership-filter" class="filter-select" title="Filter businesses by membership level">
+                    <option value="">All Memberships</option>
+                    <option value="Platinum">Platinum</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Silver">Silver</option>
+                </select>
+                
+                <button id="reset-filters" class="reset-btn">Reset Filters</button>
             </div>
         </section>
         
-        <section class="additional-info">
-            <h2>Why Join Our Chamber?</h2>
-            <div class="benefits">
-                <div class="benefit">
-                    <h3>Networking</h3>
-                    <p>Connect with business leaders and potential partners</p>
-                </div>
-                <div class="benefit">
-                    <h3>Resources</h3>
-                    <p>Access exclusive business tools and training</p>
-                </div>
-                <div class="benefit">
-                    <h3>Advocacy</h3>
-                    <p>Have your voice heard in policy discussions</p>
-                </div>
+        <!-- Business Directory -->
+        <section class="directory-section">
+            <h2>Business Directory</h2>
+            <p class="section-description">Browse our directory of verified Chamber members.</p>
+            
+            <div id="data-container" class="business-list">
+                <!-- Business cards will be loaded here -->
+            </div>
+            
+            <div id="loading" class="loading-container">
+                <div class="loading-spinner"></div>
+                <p>Loading business directory...</p>
             </div>
         </section>
     </main>
-
-    <footer>
+    
+    <!-- Footer -->
+    <footer class="main-footer" role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p>📍 Plot 2, Nile Avenue, Kampala</p>
-                <p>📞 +256 414 258 322</p>
-                <p>✉️ info@kampalachamber.ug</p>
+                <p>Plot 10A, Acacia Avenue</p>
+                <p>Kampala, Uganda</p>
+                <p>Phone: +256-XXX-XXXX</p>
+                <p>Email: info@kampalachamber.ug</p>
             </div>
+            
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Discover</a></li>
-                    <li><a href="#">Directory</a></li>
-                    <li><a href="#">Join</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/membership">Become a Member</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="LinkedIn">💼</a>
-                    <a href="#" aria-label="Instagram">📷</a>
+            
+            <div class="footer-section author-info">
+                <h3>Website Developer</h3>
+                <div class="developer-info">
+                    <img src="images/lawrence.png" alt="Bukkenya Lawrence">
+                    <div>
+                        <strong>Bukkenya Lawrence</strong>
+                        <p>Web Developer & Designer</p>
+                        <p>lawrence@kampalachamber.ug</p>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            <p>&copy; <span id="currentyear"></span> Kampala Chamber of Commerce | Bukenya Lawrence</p>
-            <p id="lastModified"></p>
+            <p>&copy; <span id="current-year"></span> Kampala Chamber of Commerce. All rights reserved.</p>
+            <p>Last updated: <span id="last-updated"></span></p>
         </div>
     </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="../chamber/scripts/main.js" defer></script>
+    <script src="../chamber/scripts/navigation.js" defer></script>
+    <script src="../chamber/scripts/hamburger.js" defer></script>
+    <script src="../chamber/scripts/weather.js" defer></script>
+    <script src="../chamber/scripts/chamber.js" defer></script>
 </body>
 </html>

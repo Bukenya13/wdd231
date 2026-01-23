@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Pea Technologies",
+    "address": "123 Tech Street, Kampala",
+    "phone": "+256-700-123456",
+    "website": "https://peatech.ug",
+    "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&h=300&fit=crop",
+    "membership": "Platinum",
+    "category": "Technology"
+  },
+  {
+    "name": "Uganda Coffee Traders",
+    "address": "202 Coffee Lane, Jinja",
+    "phone": "+256-750-987654",
+    "website": "https://ugandacoffee.ug",
+    "image": "https://images.unsplash.com/photo-1587734195503-904137cec4a6?w=400&h=300&fit=crop",
+    "membership": "Gold",
+    "category": "Agriculture"
+  },
+  {
+    "name": "Nile River Logistics",
+    "address": "303 Port Road, Jinja",
+    "phone": "+256-760-456789",
+    "website": "https://nilelogistics.com",
+    "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop",
+    "membership": "Silver",
+    "category": "Transport"
+  },
+  {
+    "name": "Kampala Commercial Hub",
+    "address": "456 Market Street, Kampala",
+    "phone": "+256-780-111222",
+    "website": "https://kampalahub.com",
+    "image": "https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop",
+    "membership": "Gold",
+    "category": "Commerce"
+  },
+  {
+    "name": "Lakeview Tourism",
+    "address": "789 Lake Drive, Entebbe",
+    "phone": "+256-710-333444",
+    "website": "https://lakeviewtourism.ug",
+    "image": "https://images.unsplash.com/photo-1556228578-9c360e1d8d34?w=400&h=300&fit=crop",
+    "membership": "Silver",
+    "category": "Tourism"
+  },
+  {
+    "name": "African Textiles Ltd",
+    "address": "55 Fabric Road, Kampala",
+    "phone": "+256-720-555666",
+    "website": "https://africantextiles.ug",
+    "image": "https://images.unsplash.com/photo-1516937941344-00b4e0337589?w=400&h=300&fit=crop",
+    "membership": "Gold",
+    "category": "Commerce"
+  }
+]

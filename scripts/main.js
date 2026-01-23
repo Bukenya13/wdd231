@@ -89,3 +89,30 @@
         displayWeather();
         displaySpotlights();
     });
+// In main.js, add weather initialization
+function initWeather() {
+    // Check if weather widget exists
+    if (document.getElementById('weather-info')) {
+        // Load weather.js script if not already loaded
+        if (!document.querySelector('script[src*="weather.js"]')) {
+            const script = document.createElement('script');
+            script.src = 'src/scripts/weather.js';
+            script.async = true;
+            document.head.appendChild(script);
+        }
+    }
+}
+
+// Add to initialization in main.js
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Kampala Chamber Directory initialized');
+    
+    // Initialize common components
+    initTheme();
+    initBackToTop();
+    initPrintButton();
+    initShareButton();
+    initWeather(); // Add this line
+    
+    // Rest of your code...
+});

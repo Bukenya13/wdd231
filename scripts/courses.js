@@ -130,3 +130,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial render - all courses
     renderCourses('all');
 });
+document.getElementById('currentyear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
