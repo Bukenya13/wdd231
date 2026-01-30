@@ -271,7 +271,8 @@ h2 {
     text-align: center;
     color: white;
     background: rgba(56, 98, 160, 0.95);
-    backdrop-filter: blur(-40rem);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     padding: 2.5rem 2rem;
     border-radius: var(--border-radius);
     max-width: 90%;
@@ -335,7 +336,19 @@ h2 {
 .events-grid {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+    .events-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    .events-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .event-card {
@@ -564,12 +577,23 @@ h2 {
 
 .spotlight-card img {
     width: 100%;
-    max-width: 250px;
-    height: 180px;
+    height: 250px;
     object-fit: cover;
-    border-radius: var(--border-radius);
-    margin-bottom: 1.2rem;
-    border: 3px solid #f0f0f0;
+    object-position: center;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .spotlight-card img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .spotlight-card img {
+        height: 180px;
+    }
 }
 
 .spotlight-card h3 {
