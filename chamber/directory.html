@@ -5,43 +5,544 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Mukono Nasuuti Chamber of Commerce Directory - Connecting local businesses and promoting economic growth">
-    <meta name="author" content="Kaluugi Isaac">
+        content="Kampala Kireka Chamber of Commerce Directory - Discover trusted local businesses and connect with our vibrant community">
+    <meta name="author" content="Bukenya Lawrence">
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:title" content="Mukono Nasuuti Chamber of Commerce">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kampala Kireka Chamber of Commerce - Business Directory">
     <meta property="og:description"
-        content="Explore Mukono Nasuuti's vibrant business community. Find trusted local services, shops, and connect with our growing economy.">
-    <meta property="og:image" content="https://kalungi256256.github.io/wdd231/project/images/og-image.png">
-    <meta property="og:url" content="https://kalungi256256.github.io/wdd231/chamber/directory.html">
+        content="Explore Kampala Kireka's vibrant business community. Find trusted local services and connect with our members.">
+    <meta property="og:image" content="https://Bukenya13.github.io/wdd231/chamber/images/og-image.jpg">
+    <meta property="og:url" content="https://Bukenya13.github.io/wdd231/chamber/directory.html">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <title>Mukono Nasuuti Chamber of Commerce | Directory</title>
+    
+    <!-- Font Awesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <title>Directory | Kampala Kireka Chamber of Commerce</title>
     <link rel="icon" href="https://i.pinimg.com/1200x/4e/0d/99/4e0d994661172f46b06b70ae250131f8.jpg" type="image/jpeg">
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/directory.css">
-    <link rel="stylesheet" href="styles/large.css">
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="icon" href="https://i.pinimg.com/1200x/4e/0d/99/4e0d994661172f46b06b70ae250131f8.jpg">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <style>
+        /* Directory Specific Styles - BLUE COLOR SCHEME WITH HAPPY SMILING FACES */
+        .directory-hero {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(37, 99, 235, 0.8) 50%, rgba(59, 130, 246, 0.8) 100%),
+                        url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            background-blend-mode: overlay;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
+        .directory-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .directory-hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .directory-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .directory-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.98;
+            font-weight: 300;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+
+        .directory-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px);
+        }
+
+        .stat-item strong {
+            font-size: 2rem;
+            display: block;
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .directory-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .search-bar {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transform: scale(1.02);
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.75rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem;
+            border-radius: 25px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .view-btn {
+            padding: 0.65rem 1.5rem;
+            border: none;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .view-btn.active {
+            background: white;
+            color: #1e3a8a;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .view-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        #memberContainer {
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .grid-view {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .list-view {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .list-view .member-card {
+            display: flex;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .list-view .member-card img {
+            width: 200px !important;
+            height: 200px !important;
+            min-width: 200px;
+            border-radius: 15px;
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #f0f0f0;
+            position: relative;
+        }
+
+        .member-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            z-index: 2;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 1.75rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+        }
+
+        .member-card h3 {
+            color: #1e3a8a;
+            font-size: 1.4rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .member-card .tagline {
+            color: #2563eb;
+            font-style: italic;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .member-contact {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 3px solid #2563eb;
+        }
+
+        .member-card p {
+            margin: 0.4rem 0;
+            color: #555;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .member-card p strong {
+            color: #1e3a8a;
+            min-width: 70px;
+        }
+
+        .member-card p a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .member-card p a:hover {
+            color: #1e3a8a;
+        }
+
+        .membership-badges {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .membership-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .membership-badge.gold {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            color: #1e3a8a;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        }
+
+        .membership-badge.silver {
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+            color: #1e3a8a;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+        }
+
+        .visit-btn {
+            margin-top: auto;
+            padding: 0.85rem 1.75rem;
+            background: linear-gradient(135deg, #2563eb, #1e3a8a);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+            align-self: flex-start;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .visit-btn:hover {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            transform: translateX(5px);
+        }
+
+        .no-members {
+            text-align: center;
+            padding: 3rem;
+            color: #999;
+            font-size: 1.1rem;
+        }
+
+        .filter-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .filter-section h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border: 2px solid #2563eb;
+            background: white;
+            color: #2563eb;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Social Media Icons Styles */
+        .social-media {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #2563eb, #1e3a8a);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
+        }
+
+        .social-icon.facebook:hover {
+            background: linear-gradient(135deg, #1877f2, #0c63e4);
+        }
+
+        .social-icon.github:hover {
+            background: linear-gradient(135deg, #333, #000);
+        }
+
+        .social-icon.linkedin:hover {
+            background: linear-gradient(135deg, #0a66c2, #004182);
+        }
+
+        .social-icon.whatsapp:hover {
+            background: linear-gradient(135deg, #25d366, #1fa857);
+        }
+
+        @media (max-width: 768px) {
+            .directory-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .grid-view {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .directory-stats {
+                gap: 1.5rem;
+            }
+
+            .list-view .member-card {
+                flex-direction: column;
+            }
+
+            .list-view .member-card img {
+                width: 100% !important;
+                height: 200px !important;
+            }
+
+            .member-card img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .directory-hero {
+                padding: 2rem 1rem;
+                min-height: 500px;
+            }
+
+            .directory-hero h1 {
+                font-size: 2rem;
+            }
+
+            .grid-view {
+                grid-template-columns: 1fr;
+            }
+
+            .view-toggle {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .directory-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Header Section -->
     <header>
         <div class="header-content">
             <div class="logo">
-                <img src="https://i.pinimg.com/1200x/4e/0d/99/4e0d994661172f46b06b70ae250131f8.jpg"
-                    alt="Mukono Nasuuti Chamber Logo">
-                <h1>Mukono Nasuuti Chamber of Commerce</h1>
+                <i class="fas fa-bell" style="font-size: 3rem; color: #ffd700; text-shadow: 0 2px 8px rgba(255, 215, 0, 0.5);"></i>
+                <div>
+                    <h1>Kampala Kireka Chamber</h1>
+                    <p class="tagline">Building Business Community</p>
+                </div>
             </div>
             <nav>
-                <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-                <ul class="nav-menu">
+                <button id="hamburger" class="menu-toggle" aria-label="Toggle menu">☰</button>
+                <ul id="navMenu" class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="directory.html" class="active">Directory</a></li>
-                    <li><a href="discover.html" class="active" aria-current="page">Discover</a></li>
+                    <li><a href="discover.html">Discover</a></li>
                     <li><a href="join.html">Join</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -49,40 +550,100 @@
         </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <section class="directory-header">
-            <h2>Business Directory</h2>
-            <div class="view-toggle">
-                <button id="gridView" class="active">Grid View</button>
-                <button id="listView">List View</button>
+        <!-- Directory Hero Section with Smiling Happy Faces -->
+        <section class="directory-hero">
+            <div class="directory-hero-content">
+                <h1>😊 Business Directory 😊</h1>
+                <p>Discover the thriving businesses and organizations shaping Kampala Kireka</p>
+                
+                <div class="directory-stats">
+                    <div class="stat-item">
+                        <strong id="totalMembers">12</strong>
+                        <span>Local Members</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong id="goldMembers">6</strong>
+                        <span>Gold Members</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong id="silverMembers">6</strong>
+                        <span>Silver Members</span>
+                    </div>
+                </div>
+
+                <div class="directory-controls">
+                    <input type="text" id="searchBar" class="search-bar" placeholder="🔍 Search businesses...">
+                    <div class="view-toggle">
+                        <button id="gridView" class="view-btn active">⊞ Grid</button>
+                        <button id="listView" class="view-btn">≡ List</button>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <h3>Filter by Membership Level</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Members</button>
+                <button class="filter-btn" data-filter="gold">Gold Members</button>
+                <button class="filter-btn" data-filter="silver">Silver Members</button>
+            </div>
+        </div>
+
+        <!-- Members Container -->
         <div id="memberContainer" class="grid-view">
-            <!-- Members will be loaded here by JavaScript -->
+            <p style="text-align: center; padding: 2rem;">Loading members...</p>
         </div>
     </main>
 
+    <!-- Footer Section -->
     <footer>
         <div class="footer-content">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>Mukono Nasuuti Chamber of Commerce</p>
-                <p>245 Main Street, Mukono Nasuuti</p>
-                <p>Email: info@mukonochamber.org</p>
-                <p>Phone: +256-7427-255-22</p>
+            <div class="footer-section">
+                <h3>Kampala Kireka Chamber</h3>
+                <p>Kireka, Kampala, Uganda</p>
+                <p>Email: info@kampalakirekachamber.org</p>
+                <p>Phone: +256-701-234-567</p>
             </div>
-            <div class="development-info">
-                <p>&copy; <span id="currentYear"></span> Mukono Nasuuti Chamber of Commerce</p>
-                <p>Kalungi Isaac| WDD 231</p>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <p>&copy; <span id="currentYear"></span> Kampala Kireka Chamber of Commerce</p>
+                <p>Bukenya Lawrence | WDD 231</p>
                 <p>Last Modified: <span id="lastModified"></span></p>
+                
+                <!-- Social Media Icons -->
+                <div class="social-media">
+                    <a href="https://www.facebook.com/kampalakirekachamber" target="_blank" rel="noopener noreferrer" class="social-icon facebook" title="Follow us on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://github.com/Bukenya13" target="_blank" rel="noopener noreferrer" class="social-icon github" title="Visit our GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/kampala-kireka-chamber" target="_blank" rel="noopener noreferrer" class="social-icon linkedin" title="Connect on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://wa.me/256701234567" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" title="Chat on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="./scripts/directory.js" defer></script>
-    <script src="./scripts/main.js" defer></script>
-    
+    <!-- Scripts -->
+    <script src="scripts/main (1).js" defer></script>
+    <script src="scripts/directory.js" defer></script>
 </body>
 
 </html>
