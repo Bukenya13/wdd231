@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+
+/* Global image defaults for consistent presentation */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: var(--border-radius, 8px);
+    object-fit: cover;
+}
+
+
+/* Header */
+
+header {
+    background-color: #063a5d;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: none;
+}
+
+nav ul.show {
+    display: block;
+}
+
+nav ul li {
+    margin: .5rem 0;
+}
+
+nav a {
+    c100or: white;
+    100px-
+    border-radius: 50%;decoration: none;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Ensure consistent appearance across browsers for form controls/buttons */
+
+.menu-btn,
+button,
+input,
+select,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+/* Layout Toggle Buttons */
+
+.view-buttons {
+    text-align: center;
+    margin: 1rem;
+}
+
+#directory.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+#directory.list {
+    display: block;
+    padding: 1rem;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+}
+
+.card img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: .5rem;
+    border-radius: calc(var(--border-radius, 8px) - 2px);
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #084e7c;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+/* Desktop Navigation */
+
+@media (min-width: 700px) {
+    nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .menu-btn {
+        display: none;
+    }
+}3515200150200px32000px

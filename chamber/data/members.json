@@ -1,0 +1,101 @@
+[
+    {
+        "name": "Kireka Resort Hotel",
+        "address": "123 Resort Road, Kireka",
+        "phone": "+256-772-123456",
+        "website": "https://mukonoresort.ug",
+        "image": "https://images.unsplash.com/photo-1689729771136-46e2ee831b83?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVzb3J0JTIwaG90ZWwlMjByb29tfGVufDB8fDB8fHww",
+        "membershipLevel": "Gold",
+        "tagline": "Your comfort is our priority"
+    },
+    {
+        "name": "Tech Solutions Uganda",
+        "address": "456 Innovation Street, Kireka",
+        "phone": "+256-772-234567",
+        "website": "https://techsolutions.ug",
+        "image": "https://plus.unsplash.com/premium_vector-1682309080127-19d3a6214a17?w=352&dpr=2&h=367&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+        "membershipLevel": "Gold",
+        "tagline": "Innovative IT solutions for modern businesses"
+    },
+    {
+        "name": "Nasuuti Coffee Processors",
+        "address": "789 Coffee Lane, Nasuuti",
+        "phone": "+256-772-345678",
+        "website": "https://nasuurticoffee.ug",
+        "image": "https://images.unsplash.com/photo-1533776992670-a72f4c28235e?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29mZmVlJTIwY3VwfGVufDB8fDB8fHww",
+        "membershipLevel": "Silver",
+        "tagline": "From farm to cup - Excellence in every bean"
+    },
+    {
+        "name": "Kireka Medical Center",
+        "address": "321 Health Avenue, Kireka",
+        "phone": "+256-772-456789",
+        "website": "https://mukonomedical.ug",
+        "image": "https://plus.unsplash.com/premium_photo-1731410156798-5740083971ef?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBudXJzZXN8ZW58MHx8MHx8fDA%3D",
+        "membershipLevel": "Gold",
+        "tagline": "Quality healthcare for all"
+    },
+    {
+        "name": "Green Valley Supermarket",
+        "address": "654 Market Street, Kireka",
+        "phone": "+256-772-567890",
+        "website": "https://greenvalley.ug",
+        "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3VwZXJtYXJrZXR8ZW58MHx8MHx8fDA%3D",
+        "membershipLevel": "Silver",
+        "tagline": "Fresh produce, happy customers"
+    },
+    {
+        "name": "Kireka Auto Services",
+        "address": "987 Garage Road, Kireka",
+        "phone": "+256-772-678901",
+        "website": "https://mukonoauto.ug",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtr-qyCryVc5_9TM82xqWXBdPj4OkLnxxR9w&s",
+        "membershipLevel": "Silver",
+        "tagline": "Expert car care and maintenance"
+    },
+    {
+        "name": "Nasuuti Fashion Boutique",
+        "address": "147 Fashion Plaza, Nasuuti",
+        "phone": "+256-772-789012",
+        "website": "https://nasuutifashion.ug",
+        "image": "https://plus.unsplash.com/premium_photo-1664872565896-8067511b6e05?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Ym90aXF1ZXxlbnwwfHwwfHx8MA%3D%3D",
+        "membershipLevel": "Bronze",
+        "tagline": "Style meets elegance"
+    },
+    {
+        "name": "Mukono Construction Ltd",
+        "address": "258 Builder's Avenue, Mukono",
+        "phone": "+256-772-890123",
+        "website": "https://mukonoconstruction.ug",
+        "image": "https://plus.unsplash.com/premium_photo-1661685150082-5c2153b507c2?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxhY2slMjBjb25zdHJ1Y3Rpb24lMjBzaXRlfGVufDB8fDB8fHww",
+        "membershipLevel": "Gold",
+        "tagline": "Building dreams into reality"
+    },
+    {
+        "name": "Smart Education Center",
+        "address": "369 Learning Lane, Mukono",
+        "phone": "+256-772-901234",
+        "website": "https://smarteducation.ug",
+        "image": "https://media.istockphoto.com/id/887302366/photo/portrait-of-male-teenage-student-in-uniform-outside-buildings.webp?a=1&b=1&s=612x612&w=0&k=20&c=dLNZCO6Fixylzh7JsG_eP9vwDuAovEjrT8E9wy5fVpQ=",
+        "membershipLevel": "Silver",
+        "tagline": "Empowering minds for tomorrow"
+    },
+    {
+        "name": "Lake Victoria Fisheries",
+        "address": "741 Lakeside Drive, Kireka",
+        "phone": "+256-772-012345",
+        "website": "https://lvfisheries.ug",
+        "image": "https://images.unsplash.com/photo-1700219987725-7cd3a0d69512?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bGFrZSUyMHZpY3RvcmlhfGVufDB8fDB8fHww",
+        "membershipLevel": "Bronze",
+        "tagline": "Fresh catch, daily"
+    },
+    {
+        "name": "Kireka Chamber of Commerce",
+        "address": "Chamber House, Main Street, Kireka",
+        "phone": "+256-750-289-58",
+        "website": "https://kirekachamber.ug",
+        "image": "https://i.pinimg.com/736x/e1/d1/7e/e1d17ef3efcc494c8df5866579a6b55d.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Empowering local business community"
+    }
+]
