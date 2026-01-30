@@ -1,6 +1,6 @@
 /* ========================================
    BASE STYLES - Mobile First
-   Mukono Nasuuti Chamber of Commerce
+   Kampala Kireka Chamber of Commerce
    ======================================== */
 
 :root {
@@ -42,7 +42,7 @@ header {
     z-index: 1000;
 }
 
-.header-container {
+.header-content {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -58,18 +58,16 @@ header {
     gap: 0.8rem;
 }
 
-.logo img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+.logo i {
+    font-size: 3rem;
+    color: #ffd700;
+    text-shadow: 0 2px 8px rgba(255, 215, 0, 0.5);
 }
 
 .logo-text h1 {
     font-size: 1.1rem;
     font-weight: 700;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     line-height: 1.2;
 }
@@ -164,6 +162,7 @@ nav {
     padding: 5rem 0 2rem 0;
     overflow-y: auto;
     z-index: 999;
+    list-style: none;
 }
 
 .nav-menu.active {
@@ -336,7 +335,7 @@ h2 {
 .events-grid {
     display: grid;
     gap: 1.5rem;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
 }
 
 @media (min-width: 600px) {
@@ -366,6 +365,15 @@ h2 {
     border-color: var(--secondary-color);
 }
 
+.event-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: block;
+}
+
 .event-card h3 {
     color: var(--primary-color);
     margin-bottom: 0.8rem;
@@ -383,6 +391,7 @@ h2 {
     color: #555;
     margin-bottom: 1rem;
     line-height: 1.5;
+    font-size: 0.95rem;
 }
 
 .event-link {
@@ -462,16 +471,23 @@ h2 {
     height: 80px;
 }
 
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
 .weather-info h3 {
     font-size: 2.2rem;
     color: var(--dark-color);
-    margin: 0 0 0.5rem 0;
+    margin: 0;
 }
 
 .weather-info p {
-    margin: 0.4rem 0;
+    margin: 0;
     color: #555;
     font-size: 0.95rem;
+    font-weight: 500;
 }
 
 /* Forecast Grid */
@@ -482,63 +498,51 @@ h2 {
 }
 
 .forecast-day {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
     text-align: center;
-    padding: 1.2rem 0.8rem;
-    background: white;
-    border-radius: var(--border-radius);
-    border: 2px solid #e9ecef;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
 }
 
 .forecast-day:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #bbdefb 0%, #e1bee7 100%);
+    border-color: #2196f3;
 }
 
-.forecast-day .day-name {
-    font-weight: 700;
-    color: #0a1f3a;
-    margin-bottom: 0.5rem;
-}
-
-.forecast-day .condition {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 0.8rem;
-}
-
-.forecast-day .temps {
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-.forecast-day .temps span {
-    font-size: 1.1rem;
-}
-
-.forecast-day:hover {
-    border-color: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.forecast-day h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.forecast-day img {
-    width: 60px;
-    height: 60px;
+.forecast-day p {
     margin: 0.5rem 0;
+    color: #333;
+    font-size: 0.9rem;
 }
 
-.forecast-desc {
-    font-size: 0.85rem;
-    color: #666;
-    margin-top: 0.5rem;
-    text-transform: capitalize;
+.forecast-day strong {
+    color: #1565c0;
+    font-size: 1.2rem;
+}
+
+/* Loading State */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #999;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: italic;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
 }
 
 /* ========================================
@@ -698,6 +702,7 @@ footer {
 .footer-section p {
     margin: 0.6rem 0;
     line-height: 1.8;
+    font-size: 0.95rem;
 }
 
 address {
@@ -735,12 +740,17 @@ address a:hover {
     transform: translateY(-3px) scale(1.1);
 }
 
+.social-links i,
 .social-links svg {
     width: 40px;
     height: 40px;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.social-links a:hover i,
 .social-links a:hover svg {
     opacity: 0.8;
 }
