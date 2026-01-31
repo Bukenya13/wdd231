@@ -270,29 +270,46 @@ function displayCompanySpotlight(companies) {
         return;
     }
     
-    // Randomly select 2-3 companies
+    // Randomly select 3 companies
     const numToDisplay = Math.min(3, qualifiedMembers.length);
     const selectedCompanies = getRandomCompanies(qualifiedMembers, numToDisplay);
     
     let spotlightHTML = '<div class="spotlight-grid">';
     
-    selectedCompanies.forEach(company => {
+    selectedCompanies.forEach((company, index) => {
+        // Generate different random images for each company
+        const randomImageId = Math.floor(Math.random() * 1000);
+        const imageUrl = `https://images.unsplash.com/photo-${1500000000 + randomImageId}?auto=format&fit=crop&w=400&q=80`;
+        
+        // Fallback images based on company type
+        const fallbackImages = [
+            'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80',
+            'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80',
+            'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80'
+        ];
+        
+        const displayImage = fallbackImages[index % fallbackImages.length];
+        
         spotlightHTML += `
             <div class="spotlight-card">
-                <img src="${company.image}" 
-                     alt="${company.name}"
+                <img src="${displayImage}" 
+                     alt="${company.name} - ${company.industry}"
                      loading="lazy"
-                     onerror="this.src='https://via.placeholder.com/300?text=No+Image'">
+                     class="spotlight-image"
+                     data-company-id="${index}"
+                     onerror="this.src='https://via.placeholder.com/300x250?text=${encodeURIComponent(company.name)}'">
                 <h3>${company.name}</h3>
+                <p class="company-industry"><strong>Industry:</strong> ${company.industry || 'Business Services'}</p>
                 ${company.tagline ? `<p class="company-tagline">"${company.tagline}"</p>` : ''}
-                <p><strong>Phone:</strong> ${company.phone}</p>
-                <p><strong>Address:</strong> ${company.address}</p>
+                <p><strong>📍 Phone:</strong> <a href="tel:${company.phone}">${company.phone}</a></p>
+                <p><strong>📧 Email:</strong> <a href="mailto:${company.email}">${company.email}</a></p>
+                <p><strong>🏢 Address:</strong> ${company.address}</p>
                 <span class="membership-badge ${company.membershipLevel.toLowerCase()}">
-                    ${company.membershipLevel} Member
+                    ⭐ ${company.membershipLevel} Member
                 </span>
                 <br>
-                <a href="${company.website}" target="_blank" class="company-website">
-                    Visit Website →
+                <a href="${company.website}" target="_blank" rel="noopener noreferrer" class="company-website">
+                    🌐 Visit Website
                 </a>
             </div>
         `;
@@ -300,6 +317,34 @@ function displayCompanySpotlight(companies) {
     
     spotlightHTML += '</div>';
     spotlightDiv.innerHTML = spotlightHTML;
+    
+    // Add click event to shuffle through images
+    document.querySelectorAll('.spotlight-image').forEach(img => {
+        img.addEventListener('click', function() {
+            rotateImage(this);
+        });
+    });
+}
+
+// ========================================
+// 9.5 ROTATE SPOTLIGHT IMAGES
+// ========================================
+
+function rotateImage(imgElement) {
+    const images = [
+        'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80'
+    ];
+    
+    const randomIndex = Math.floor(Math.random() * images.length);
+    imgElement.style.opacity = '0.5';
+    
+    setTimeout(() => {
+        imgElement.src = images[randomIndex];
+        imgElement.style.opacity = '1';
+    }, 200);
 }
 
 // ========================================
