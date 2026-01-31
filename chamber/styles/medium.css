@@ -1,0 +1,278 @@
+/* ========================================
+   MEDIUM SCREENS (Tablets 768px - 1024px)
+   Kampala Kireka Chamber of Commerce
+   ======================================== */
+
+@media (min-width: 768px) {
+    
+    /* ========================================
+       HEADER & NAVIGATION
+       ======================================== */
+    
+    header {
+        padding: 1.2rem;
+    }
+
+    .header-content {
+        gap: 2rem;
+    }
+
+    .logo {
+        gap: 1.2rem;
+    }
+
+    .logo-bell {
+        font-size: 3.2rem;
+    }
+
+    .logo-text h1 {
+        font-size: 1.4rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.8rem;
+    }
+
+    /* Hide hamburger on tablets */
+    .hamburger {
+        display: none;
+    }
+
+    .nav-overlay {
+        display: none;
+    }
+
+    /* Show nav menu horizontally */
+    .nav-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        flex-direction: row;
+        padding: 0;
+        box-shadow: none;
+        transition: none;
+        left: 0;
+        top: 0;
+        overflow-y: visible;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        border: none;
+        margin: 0;
+    }
+
+    .nav-menu a {
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        border: none;
+        display: inline-block;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a:focus {
+        background-color: transparent;
+        border: none;
+        color: var(--secondary-color);
+        text-decoration: underline;
+    }
+
+    .nav-menu a.active {
+        background-color: transparent;
+        border: none;
+        color: var(--secondary-color);
+        font-weight: 600;
+    }
+
+    /* ========================================
+       MAIN CONTENT
+       ======================================== */
+
+    main {
+        padding: 1.5rem;
+    }
+
+    section {
+        margin: 2rem 0;
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* ========================================
+       HERO SECTION
+       ======================================== */
+
+    .hero {
+        height: 600px;
+        margin: 0 -1.5rem 0 -1.5rem;
+    }
+
+    .hero-content {
+        max-width: 70%;
+        padding: 3rem 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-button {
+        padding: 18px 36px;
+        font-size: 1.1rem;
+        min-width: 200px;
+    }
+
+    /* ========================================
+       EVENTS SECTION
+       ======================================== */
+
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .event-card {
+        padding: 1.8rem;
+    }
+
+    .event-photo {
+        height: 220px;
+    }
+
+    .event-card h3 {
+        font-size: 1.5rem;
+    }
+
+    /* ========================================
+       WEATHER SECTION
+       ======================================== */
+
+    .weather-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .weather-box {
+        padding: 2rem;
+    }
+
+    .weather-box h3 {
+        font-size: 1.4rem;
+    }
+
+    .weather-current {
+        gap: 1.5rem;
+    }
+
+    .weather-current img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .weather-info h3 {
+        font-size: 2.5rem;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+    }
+
+    .forecast-day {
+        padding: 1.5rem;
+    }
+
+    .forecast-day p {
+        font-size: 0.95rem;
+    }
+
+    .forecast-day strong {
+        font-size: 1.3rem;
+    }
+
+    /* ========================================
+       MEMBER SPOTLIGHT SECTION
+       ======================================== */
+
+    #spotlight-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .spotlight-card {
+        padding: 2rem;
+    }
+
+    .spotlight-image {
+        height: 280px;
+    }
+
+    .spotlight-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .membership-badge {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.3rem;
+    }
+
+    .company-website {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+
+    footer {
+        padding: 2.5rem 1.5rem 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        text-align: left;
+    }
+
+    .footer-section {
+        text-align: left;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+        gap: 1.5rem;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
+    }
+
+    .social-links i {
+        font-size: 1.5rem;
+    }
+
+}
