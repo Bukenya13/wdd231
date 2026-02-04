@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate OG Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .og-image {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .og-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .og-image::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .og-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 60px;
+        }
+
+        .og-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+        }
+
+        .og-title {
+            font-size: 72px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .og-subtitle {
+            font-size: 32px;
+            font-weight: 300;
+            margin: 0;
+            opacity: 0.95;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .og-cta {
+            font-size: 24px;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .download-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 16px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        /* Validation Styles */
+        .validation-error-message {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #c53030;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .form-group input.error,
+        .form-group textarea.error {
+            border-color: #f56565 !important;
+            background-color: #fff5f5;
+        }
+
+        /* Success Message */
+        .validation-success-message {
+            background: #c6f6d5;
+            color: #22543d;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #48bb78;
+        }
+
+        /* Print Button */
+        .print-btn {
+            background: #4299e1;
+            color: white;
+            border: none;
+            padding: 1.1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .print-btn:hover {
+            background: #3182ce;
+            transform: translateY(-3px);
+        }
+
+        /* Animation utilities */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media print {
+            .print-btn,
+            .btn-secondary,
+            .submit-btn {
+                display: none;
+            }
+
+            .thankyou-card {
+                box-shadow: none;
+                border: 1px solid #e2e8f0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="og-image" id="ogImage">
+        <div class="og-content">
+            <div class="og-icon">🤝</div>
+            <h1 class="og-title">Join Kampala Kireka Chamber</h1>
+            <p class="og-subtitle">Grow Your Business Network</p>
+            <div class="og-cta">Apply for Membership Today</div>
+        </div>
+    </div>
+
+    <div class="download-section">
+        <p><strong>Step 1:</strong> Right-click the image above and select "Save image as..."</p>
+        <p><strong>Step 2:</strong> Save as <code>chamber-join-og.jpg</code> in your <code>images</code> folder</p>
+        <p>Or click the button below to download:</p>
+        <button onclick="downloadImage()">Download OG Image</button>
+    </div>
+
+    <script>
+        function downloadImage() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 1200;
+            canvas.height = 630;
+            const ctx = canvas.getContext('2d');
+
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 630);
+
+            // Circle decorations
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+            ctx.beginPath();
+            ctx.arc(1400, -150, 500, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.beginPath();
+            ctx.arc(-50, 750, 400, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 72px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+            ctx.shadowBlur = 4;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.fillText('Join Kampala Kireka Chamber', 600, 250);
+
+            ctx.font = '32px Arial';
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.1)';
+            ctx.shadowBlur = 2;
+            ctx.shadowOffsetX = 1;
+            ctx.shadowOffsetY = 1;
+            ctx.fillText('Grow Your Business Network', 600, 350);
+
+            // CTA Button
+            ctx.font = 'bold 24px Arial';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = 2;
+            ctx.fillRect(350, 420, 500, 60);
+            ctx.strokeRect(350, 420, 500, 60);
+            ctx.fillStyle = 'white';
+            ctx.fillText('Apply for Membership Today', 600, 450);
+
+            // Download
+            canvas.toBlob(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'chamber-join-og.jpg';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            }, 'image/jpeg', 0.95);
+        }
+    </script>
+</body>
+</html>
