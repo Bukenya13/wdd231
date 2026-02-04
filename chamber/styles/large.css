@@ -55,6 +55,26 @@ main {
     padding: 2rem;
 }
 
+/* Only large-specific overrides - NO duplicate global styles */
+
+@media (min-width: 1025px) {
+    .header-content {
+        padding: 1rem 3rem;
+    }
+
+    main {
+        padding: 3rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .membership-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 /* Events Grid */
 .events-grid {
     display: grid;

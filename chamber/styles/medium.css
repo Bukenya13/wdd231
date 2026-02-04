@@ -15,6 +15,7 @@
 
     .header-content {
         gap: 2rem;
+        padding: 1rem 2rem;
     }
 
     .logo {
@@ -93,7 +94,7 @@
        ======================================== */
 
     main {
-        padding: 1.5rem;
+        padding: 3rem 2rem;
     }
 
     section {
@@ -275,4 +276,18 @@
         font-size: 1.5rem;
     }
 
-}
+    /* Only medium-specific overrides - NO duplicate global styles */
+
+    @media (min-width: 768px) {
+        .header-content {
+            padding: 1rem 2rem;
+        }
+
+        main {
+            padding: 3rem 2rem;
+        }
+
+        .membership-cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
