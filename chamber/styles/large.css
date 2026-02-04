@@ -173,3 +173,109 @@ h2 {
 h3 {
     font-size: 1.5rem;
 }
+
+/* ===== LARGE BREAKPOINT (1025px and above) ===== */
+
+@media (min-width: 1025px) {
+    /* ===== HEADER ===== */
+    .header-content {
+        padding: 1rem 3rem;
+    }
+
+    /* ===== MAIN ===== */
+    main {
+        padding: 3rem;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav-menu {
+        gap: 2.5rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    /* ===== JOIN PAGE SPECIFIC ===== */
+    .join-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .form-section,
+    .membership-cards-section {
+        padding: 2rem;
+    }
+
+    .membership-cards {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    /* ===== DIRECTORY PAGE SPECIFIC ===== */
+    .directory-hero {
+        min-height: 700px;
+        padding: 5rem 2rem;
+    }
+
+    .directory-hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .grid-view {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .list-view .member-card {
+        flex-direction: row;
+    }
+
+    .list-view .member-card img {
+        width: 250px !important;
+        height: 250px !important;
+        min-width: 250px;
+    }
+
+    /* ===== MODAL ===== */
+    .modal-content {
+        width: 70%;
+        padding: 2.5rem;
+        max-height: 80vh;
+    }
+
+    /* ===== FILTER SECTION ===== */
+    .filter-section {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .filter-buttons {
+        gap: 2rem;
+    }
+
+    .directory-stats {
+        gap: 3rem;
+    }
+
+    .stat-item {
+        padding: 2rem 3rem;
+    }
+}

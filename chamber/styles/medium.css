@@ -291,3 +291,93 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
+
+    /* ===== MEDIUM BREAKPOINT (768px - 1024px) ===== */
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        /* ===== HEADER ===== */
+        .header-content {
+            padding: 1rem 2rem;
+        }
+
+        /* ===== MAIN ===== */
+        main {
+            padding: 2.5rem;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav-menu {
+            gap: 1.5rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-content {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        /* ===== JOIN PAGE SPECIFIC ===== */
+        .join-container {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-section,
+        .membership-cards-section {
+            padding: 1.5rem;
+        }
+
+        .membership-cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* ===== DIRECTORY PAGE SPECIFIC ===== */
+        .directory-hero h1 {
+            font-size: 3rem;
+        }
+
+        .grid-view {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .list-view .member-card {
+            flex-direction: row;
+        }
+
+        .list-view .member-card img {
+            width: 200px !important;
+            height: 200px !important;
+            min-width: 200px;
+        }
+
+        /* ===== MODAL ===== */
+        .modal-content {
+            width: 85%;
+            padding: 2rem;
+        }
+
+        /* ===== FILTER SECTION ===== */
+        .filter-section {
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+
+        .filter-buttons {
+            gap: 1.5rem;
+        }
+    }
+}
