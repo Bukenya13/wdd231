@@ -25,15 +25,15 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', 'Open Sans', sans-serif;
     color: var(--text-dark);
     background-color: #fff;
     line-height: 1.6;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 /* ===== HEADER STYLES ===== */
@@ -216,7 +216,7 @@ address {
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
     white-space: nowrap;
     border-width: 0;
 }
@@ -230,6 +230,10 @@ address {
 @media (max-width: 767px) {
     .header-content {
         padding: 0 1rem;
+    }
+
+    .logo-title {
+        font-size: 1.1rem;
     }
 
     .hamburger {
@@ -260,12 +264,16 @@ address {
     main {
         padding: 0 1rem;
     }
+
+    .footer-content {
+        padding: 0 1rem;
+    }
 }
 
 /* ===== RESPONSIVE - TABLET ===== */
 @media (min-width: 768px) and (max-width: 1024px) {
     .logo-title {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .nav-menu li a {
