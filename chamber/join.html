@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Kampala Kireka Chamber of Commerce. Apply for membership and grow your business network.">
+    <meta name="author" content="Bukenya Lawrence">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Join | Kampala Kireka Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://Bukenya13.github.io/wdd231/chamber/join.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/1200x/4e/0d/99/4e0d994661172f46b06b70ae250131f8.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1025px)">
+
+    <title>Join | Kampala Kireka Chamber of Commerce</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-bell logo-bell"></i>
+                <div class="logo-text">
+                    <h1>Kampala Kireka Chamber</h1>
+                    <p class="logo-subtitle">Building Business Community</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html" aria-current="page">Join</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h2>Join Our Chamber</h2>
+            <p>Become part of the Kampala Kireka business community and unlock growth opportunities</p>
+        </section>
+
+        <!-- Join Page Container -->
+        <div class="join-container">
+            <!-- Application Form -->
+            <section class="form-section">
+                <h3>Membership Application</h3>
+                <form id="joinForm" method="get" action="thankyou.html">
+                    
+                    <!-- First Name -->
+                    <div class="form-group">
+                        <label for="firstName">
+                            First Name <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="firstName" 
+                            name="firstName" 
+                            title="First Name" 
+                            autocomplete="given-name" 
+                            required
+                            placeholder="John">
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="form-group">
+                        <label for="lastName">
+                            Last Name <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="lastName" 
+                            name="lastName" 
+                            title="Last Name" 
+                            autocomplete="family-name" 
+                            required
+                            placeholder="Doe">
+                    </div>
+
+                    <!-- Organizational Title -->
+                    <div class="form-group">
+                        <label for="orgTitle">
+                            Your Title <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="orgTitle" 
+                            name="orgTitle" 
+                            title="Organizational Title" 
+                            autocomplete="organization-title" 
+                            pattern="^[a-zA-Z\s\-]{7,}$"
+                            placeholder="Managing Director"
+                            required>
+                        <small>Minimum 7 characters (letters, hyphens, and spaces only)</small>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">
+                            Email Address <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            title="Email Address" 
+                            autocomplete="email" 
+                            required
+                            placeholder="john.doe@example.com">
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="form-group">
+                        <label for="phone">
+                            Mobile Phone <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            title="Mobile Phone Number" 
+                            autocomplete="tel" 
+                            required
+                            placeholder="+256-700-000-000">
+                    </div>
+
+                    <!-- Business Name -->
+                    <div class="form-group">
+                        <label for="businessName">
+                            Business/Organization Name <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="businessName" 
+                            name="businessName" 
+                            title="Business Name" 
+                            autocomplete="organization" 
+                            required
+                            placeholder="Your Company Name">
+                    </div>
+
+                    <!-- Membership Level -->
+                    <div class="form-group">
+                        <label for="membershipLevel">
+                            Select Membership Level <span class="required">*</span>
+                        </label>
+                        <select id="membershipLevel" name="membershipLevel" title="Membership Level" required>
+                            <option value="">-- Choose a membership level --</option>
+                            <option value="np">NP Membership (Non-Profit - Free)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </div>
+
+                    <!-- Business Description -->
+                    <div class="form-group">
+                        <label for="businessDesc">
+                            Business/Organization Description
+                        </label>
+                        <textarea 
+                            id="businessDesc" 
+                            name="businessDesc" 
+                            title="Business Description" 
+                            rows="5"
+                            placeholder="Tell us about your business..."></textarea>
+                    </div>
+
+                    <!-- Hidden Timestamp -->
+                    <input 
+                        type="hidden" 
+                        id="timestamp" 
+                        name="timestamp">
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-check-circle"></i> Submit Application
+                    </button>
+                </form>
+            </section>
+
+            <!-- Membership Cards Section -->
+            <section class="membership-cards-section">
+                <h3>Membership Levels</h3>
+                <div class="membership-cards">
+                    <!-- NP Membership Card -->
+                    <div class="membership-card card-np" data-level="np">
+                        <div class="card-header">
+                            <h4>NP Membership</h4>
+                            <p class="card-price">Free</p>
+                        </div>
+                        <p class="card-desc">For non-profit organizations</p>
+                        <button class="info-btn" data-modal="modalNp" aria-label="Learn more about NP Membership">
+                            View Benefits <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Bronze Membership Card -->
+                    <div class="membership-card card-bronze" data-level="bronze">
+                        <div class="card-header">
+                            <h4>Bronze Membership</h4>
+                            <p class="card-price">UGX 50,000</p>
+                        </div>
+                        <p class="card-desc">Perfect for small businesses</p>
+                        <button class="info-btn" data-modal="modalBronze" aria-label="Learn more about Bronze Membership">
+                            View Benefits <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Silver Membership Card -->
+                    <div class="membership-card card-silver" data-level="silver">
+                        <div class="card-header">
+                            <h4>Silver Membership</h4>
+                            <p class="card-price">UGX 100,000</p>
+                        </div>
+                        <p class="card-desc">Growing businesses & organizations</p>
+                        <button class="info-btn" data-modal="modalSilver" aria-label="Learn more about Silver Membership">
+                            View Benefits <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Gold Membership Card -->
+                    <div class="membership-card card-gold" data-level="gold">
+                        <div class="card-header">
+                            <h4>Gold Membership</h4>
+                            <p class="card-price">UGX 200,000</p>
+                        </div>
+                        <p class="card-desc">Premium business benefits</p>
+                        <button class="info-btn" data-modal="modalGold" aria-label="Learn more about Gold Membership">
+                            View Benefits <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Modals -->
+        <!-- NP Membership Modal -->
+        <div id="modalNp" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+                <h3>NP Membership Benefits</h3>
+                <p class="modal-price">Free</p>
+                <ul class="benefits-list">
+                    <li><i class="fas fa-check-circle"></i> Basic chamber membership</li>
+                    <li><i class="fas fa-check-circle"></i> Access to member directory</li>
+                    <li><i class="fas fa-check-circle"></i> Monthly newsletter</li>
+                    <li><i class="fas fa-check-circle"></i> Networking events (quarterly)</li>
+                    <li><i class="fas fa-check-circle"></i> Chamber website listing</li>
+                </ul>
+                <p class="modal-desc">Perfect for non-profit organizations looking to build community connections.</p>
+            </div>
+        </div>
+
+        <!-- Bronze Membership Modal -->
+        <div id="modalBronze" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+                <h3>Bronze Membership Benefits</h3>
+                <p class="modal-price">UGX 50,000/year</p>
+                <ul class="benefits-list">
+                    <li><i class="fas fa-check-circle"></i> All NP benefits</li>
+                    <li><i class="fas fa-check-circle"></i> Networking events (monthly)</li>
+                    <li><i class="fas fa-check-circle"></i> Business listing with description</li>
+                    <li><i class="fas fa-check-circle"></i> 10% discount on event tickets</li>
+                    <li><i class="fas fa-check-circle"></i> Monthly training webinars</li>
+                    <li><i class="fas fa-check-circle"></i> Social media promotion (quarterly)</li>
+                </ul>
+                <p class="modal-desc">Ideal for small businesses ready to grow their network.</p>
+            </div>
+        </div>
+
+        <!-- Silver Membership Modal -->
+        <div id="modalSilver" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+                <h3>Silver Membership Benefits</h3>
+                <p class="modal-price">UGX 100,000/year</p>
+                <ul class="benefits-list">
+                    <li><i class="fas fa-check-circle"></i> All Bronze benefits</li>
+                    <li><i class="fas fa-check-circle"></i> Spotlight feature (2x per year)</li>
+                    <li><i class="fas fa-check-circle"></i> 20% discount on event tickets</li>
+                    <li><i class="fas fa-check-circle"></i> Business card display area</li>
+                    <li><i class="fas fa-check-circle"></i> Weekly training sessions</li>
+                    <li><i class="fas fa-check-circle"></i> Newsletter feature article (quarterly)</li>
+                    <li><i class="fas fa-check-circle"></i> Social media promotion (bi-weekly)</li>
+                    <li><i class="fas fa-check-circle"></i> Advertising opportunities</li>
+                </ul>
+                <p class="modal-desc">Perfect for growing businesses seeking more visibility.</p>
+            </div>
+        </div>
+
+        <!-- Gold Membership Modal -->
+        <div id="modalGold" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+                <h3>Gold Membership Benefits</h3>
+                <p class="modal-price">UGX 200,000/year</p>
+                <ul class="benefits-list">
+                    <li><i class="fas fa-check-circle"></i> All Silver benefits</li>
+                    <li><i class="fas fa-check-circle"></i> Spotlight feature (monthly)</li>
+                    <li><i class="fas fa-check-circle"></i> 30% discount on all events</li>
+                    <li><i class="fas fa-check-circle"></i> Premium booth at trade fairs</li>
+                    <li><i class="fas fa-check-circle"></i> Dedicated account manager</li>
+                    <li><i class="fas fa-check-circle"></i> VIP networking events (monthly)</li>
+                    <li><i class="fas fa-check-circle"></i> Front page website featuring</li>
+                    <li><i class="fas fa-check-circle"></i> Social media promotion (weekly)</li>
+                    <li><i class="fas fa-check-circle"></i> Premium advertising package</li>
+                    <li><i class="fas fa-check-circle"></i> Exclusive business opportunities</li>
+                </ul>
+                <p class="modal-desc">For established businesses wanting maximum visibility and benefits.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section contact-info">
+                <h3>Kampala Kireka Chamber of Commerce</h3>
+                <address>
+                    <p>Kireka, Kampala, Uganda</p>
+                    <p><a href="mailto:info@kirekakampalachamber.ug">info@kirekakampalachamber.ug</a></p>
+                    <p><a href="tel:+256750289558">+256-750-289-558</a></p>
+                </address>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Bukenya13" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section development-info">
+                <p>&copy; <span id="currentYear"></span> Kampala Kireka Chamber of Commerce</p>
+                <p><strong>Bukenya Lawrence</strong></p>
+                <p>WDD 231 - Web Frontend Development</p>
+                <p class="last-modified">Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+</body>
+
+</html>
