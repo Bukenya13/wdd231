@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate OG Image for Repository</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .preview-section {
+            margin-bottom: 30px;
+        }
+
+        .preview-title {
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        canvas {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            max-width: 100%;
+            height: auto;
+            background: #f7fafc;
+        }
+
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-copy {
+            background: #e2e8f0;
+            color: #2d3748;
+            border: 2px solid #cbd5e0;
+        }
+
+        .btn-copy:hover {
+            background: #cbd5e0;
+        }
+
+        .instructions {
+            background: #edf2f7;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+        }
+
+        .instructions code {
+            background: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e53e3e;
+            font-weight: 700;
+        }
+
+        .success-message {
+            background: #c6f6d5;
+            border-left: 4px solid #48bb78;
+            color: #22543d;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .button-group {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 OG Image Generator</h1>
+        <p class="subtitle">For Kampala Kireka Chamber - Join Page</p>
+
+        <div class="preview-section">
+            <p class="preview-title">Preview (1200x630px):</p>
+            <canvas id="ogCanvas" width="1200" height="630"></canvas>
+        </div>
+
+        <div class="button-group">
+            <button class="btn-download" onclick="downloadImage()">
+                📥 Download Image
+            </button>
+            <button class="btn-copy" onclick="copyInstructions()">
+                📋 Copy Instructions
+            </button>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            ✅ Instructions copied! Paste in a text file to save.
+        </div>
+
+        <div class="instructions">
+            <h3>📝 Instructions:</h3>
+            <ol>
+                <li>Click <strong>"Download Image"</strong> button above</li>
+                <li>Save the file as <code>chamber-join-og.jpg</code> in your <code>images</code> folder</li>
+                <li>Full path: <code>c:\Users\BEST PHEM\Desktop\wdd231\chamber\images\chamber-join-og.jpg</code></li>
+                <li>Commit and push to your GitHub repository</li>
+                <li>Update <code>join.html</code> og:image meta tag to:
+                    <br><code>https://Bukenya13.github.io/wdd231/chamber/images/chamber-join-og.jpg</code>
+                </li>
+                <li>Wait 24 hours for cache to clear</li>
+                <li>Test with <a href="https://developers.facebook.com/tools/debug/" target="_blank" rel="noopener">Facebook OG Debugger</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Generate the OG image on page load
+        window.addEventListener('load', generateOGImage);
+
+        function generateOGImage() {
+            const canvas = document.getElementById('ogCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Set canvas size
+            canvas.width = 1200;
+            canvas.height = 630;
+
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 630);
+
+            // Decorative circles
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+            ctx.beginPath();
+            ctx.arc(1400, -150, 500, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.beginPath();
+            ctx.arc(-50, 750, 400, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Main title
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 72px "Roboto", Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+            ctx.shadowBlur = 4;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.fillText('Join Kampala Kireka Chamber', 600, 220);
+
+            // Subtitle
+            ctx.font = '32px "Roboto", Arial, sans-serif';
+            ctx.shadowBlur = 2;
+            ctx.shadowOffsetX = 1;
+            ctx.shadowOffsetY = 1;
+            ctx.fillText('Grow Your Business Network', 600, 300);
+
+            // CTA Button
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = 2;
+            ctx.fillRect(300, 380, 600, 80);
+            ctx.strokeRect(300, 380, 600, 80);
+
+            ctx.font = 'bold 24px "Roboto", Arial, sans-serif';
+            ctx.fillStyle = 'white';
+            ctx.shadowBlur = 2;
+            ctx.shadowOffsetX = 1;
+            ctx.shadowOffsetY = 1;
+            ctx.fillText('Apply for Membership Today', 600, 420);
+
+            // Logo/Icon area
+            ctx.font = '60px Arial';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.textAlign = 'left';
+            ctx.fillText('🤝', 50, 100);
+        }
+
+        function downloadImage() {
+            const canvas = document.getElementById('ogCanvas');
+            
+            canvas.toBlob(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'chamber-join-og.jpg';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            }, 'image/jpeg', 0.95);
+        }
+
+        function copyInstructions() {
+            const instructions = `
+INSTRUCTIONS FOR KAMPALA KIREKA CHAMBER OG IMAGE:
+
+1. Download the OG image from the generator
+2. Save as: chamber-join-og.jpg
+3. Location: c:\\Users\\BEST PHEM\\Desktop\\wdd231\\chamber\\images\\chamber-join-og.jpg
+
+4. Update join.html meta tag to:
+   <meta property="og:image" content="https://Bukenya13.github.io/wdd231/chamber/images/chamber-join-og.jpg">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+
+5. Git commands:
+   git add images/chamber-join-og.jpg
+   git commit -m "Add OG image for join page"
+   git push origin main
+
+6. Test after 24 hours at:
+   https://developers.facebook.com/tools/debug/
+            `;
+            
+            navigator.clipboard.writeText(instructions).then(() => {
+                const msg = document.getElementById('successMessage');
+                msg.classList.add('show');
+                setTimeout(() => msg.classList.remove('show'), 3000);
+            });
+        }
+    </script>
+</body>
+</html>
