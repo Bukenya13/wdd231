@@ -79,14 +79,9 @@ function safeGetElementById(id) {
 // 3. WEATHER API CONFIGURATION - KAMPALA
 // ========================================
 
-const WEATHER_CONFIG = {
-    apiKey: '4b6617030376791602a616bc73c4e742',
-    city: 'Kampala',
-    country: 'UG',
-    units: 'metric',
-    lat: 0.3476,
-    lon: 32.5825
-};
+const WEATHER_API_KEY = '4b6617030376791602a616bc73c4e742';
+const KAMPALA_LAT = 0.3476;
+const KAMPALA_LON = 32.5825;
 
 // ========================================
 // 4. FETCH CURRENT WEATHER
@@ -99,7 +94,7 @@ async function fetchCurrentWeather() {
         return;
     }
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${WEATHER_CONFIG.lat}&lon=${WEATHER_CONFIG.lon}&appid=${WEATHER_CONFIG.apiKey}&units=${WEATHER_CONFIG.units}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${KAMPALA_LAT}&lon=${KAMPALA_LON}&units=metric&appid=${WEATHER_API_KEY}`;
     
     try {
         console.log('Fetching weather from:', url);
@@ -127,29 +122,14 @@ async function fetchCurrentWeather() {
 
 function displayCurrentWeather(data) {
     const weatherDiv = safeGetElementById('current-weather');
-    if (!weatherDiv) return;
-
     const temp = Math.round(data.main.temp);
-    const feelsLike = Math.round(data.main.feels_like);
     const description = data.weather[0].description;
-    const icon = data.weather[0].icon;
     const humidity = data.main.humidity;
-    const windSpeed = (data.wind.speed * 3.6).toFixed(1); // Convert m/s to km/h
     
     weatherDiv.innerHTML = `
-        <div class="weather-current">
-            <img src="https://openweathermap.org/img/wn/${icon}@2x.png" 
-                 alt="${description}"
-                 loading="lazy"
-                 style="width: 100px; height: 100px;">
-            <div class="weather-info">
-                <h3>${temp}°C</h3>
-                <p style="text-transform: capitalize; font-weight: 600; color: #264653;">${description}</p>
-                <p><strong>Feels like:</strong> ${feelsLike}°C</p>
-                <p><strong>Humidity:</strong> ${humidity}%</p>
-                <p><strong>Wind:</strong> ${windSpeed} km/h</p>
-            </div>
-        </div>
+        <p><strong>Temperature:</strong> ${temp}°C</p>
+        <p><strong>Condition:</strong> ${description}</p>
+        <p><strong>Humidity:</strong> ${humidity}%</p>
     `;
 }
 
@@ -164,7 +144,7 @@ async function fetchWeatherForecast() {
         return;
     }
 
-    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${WEATHER_CONFIG.lat}&lon=${WEATHER_CONFIG.lon}&appid=${WEATHER_CONFIG.apiKey}&units=${WEATHER_CONFIG.units}`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${KAMPALA_LAT}&lon=${KAMPALA_LON}&units=metric&appid=${WEATHER_API_KEY}`;
     
     try {
         console.log('Fetching forecast from:', url);
@@ -193,32 +173,22 @@ async function fetchWeatherForecast() {
 
 function displayWeatherForecast(data) {
     const forecastDiv = safeGetElementById('forecast-weather');
-    if (!forecastDiv) return;
-
-    let forecastHTML = '<div class="forecast-grid">';
+    let forecastHTML = '';
     
-    // Show one forecast per day (every 8 items = 24 hours)
+    // Get forecast for next 5 days (every 24 hours)
     for (let i = 0; i < data.list.length; i += 8) {
-        const item = data.list[i];
-        const date = new Date(item.dt * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-        const temp = Math.round(item.main.temp);
-        const description = item.weather[0].description;
-        const icon = item.weather[0].icon;
+        const day = data.list[i];
+        const date = new Date(day.dt * 1000).toLocaleDateString('en-US', { weekday: 'short' });
+        const temp = Math.round(day.main.temp);
         
         forecastHTML += `
             <div class="forecast-day">
                 <p><strong>${date}</strong></p>
-                <img src="https://openweathermap.org/img/wn/${icon}.png" 
-                     alt="${description}"
-                     loading="lazy"
-                     style="width: 60px; height: 60px;">
-                <p><strong>${temp}°C</strong></p>
-                <p style="text-transform: capitalize; font-size: 0.9rem;">${description}</p>
+                <p>${temp}°C - ${day.weather[0].main}</p>
             </div>
         `;
     }
     
-    forecastHTML += '</div>';
     forecastDiv.innerHTML = forecastHTML;
 }
 
