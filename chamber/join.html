@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Kampala Kireka Chamber of Commerce. Apply for membership and grow your business network.">
+    <meta name="description"
+        content="Join the Kampala Kireka Chamber of Commerce. Apply for membership and grow your business network.">
     <meta name="author" content="Bukenya Lawrence">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Join | Kampala Kireka Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://Bukenya13.github.io/wdd231/chamber/join.html">
-    <meta property="og:description" content="Join Kampala Kireka Chamber today. Unlock networking opportunities, training, and business growth benefits.">
+    <meta property="og:description"
+        content="Join Kampala Kireka Chamber today. Unlock networking opportunities, training, and business growth benefits.">
     <meta property="og:image" content="https://Bukenya13.github.io/wdd231/chamber/images/chamber-join-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -20,7 +22,8 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Join Kampala Kireka Chamber of Commerce">
-    <meta name="twitter:description" content="Join Kampala Kireka Chamber today. Unlock networking opportunities, training, and business growth benefits.">
+    <meta name="twitter:description"
+        content="Join Kampala Kireka Chamber today. Unlock networking opportunities, training, and business growth benefits.">
     <meta name="twitter:image" content="https://Bukenya13.github.io/wdd231/chamber/images/chamber-join-og.jpg">
 
     <!-- Favicon -->
@@ -29,7 +32,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -40,6 +45,9 @@
     <link rel="stylesheet" href="styles/join.css">
     <link rel="stylesheet" href="styles/medium.css" media="(min-width: 768px)">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 1025px)">
+    <!-- JavaScript -->
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/join.js" defer></script>
 
     <title>Join | Kampala Kireka Chamber of Commerce</title>
 </head>
@@ -72,6 +80,7 @@
                 </ul>
             </nav>
         </div>
+
     </header>
 
     <!-- Main Content -->
@@ -88,20 +97,14 @@
             <section class="form-section">
                 <h3>Membership Application</h3>
                 <form id="joinForm" method="get" action="thankyou.html">
-                    
+
                     <!-- First Name -->
                     <div class="form-group">
                         <label for="firstName">
                             First Name <span class="required">*</span>
                         </label>
-                        <input 
-                            type="text" 
-                            id="firstName" 
-                            name="firstName" 
-                            title="First Name" 
-                            autocomplete="given-name" 
-                            required
-                            placeholder="First name">
+                        <input type="text" id="firstName" name="firstName" title="First Name" autocomplete="given-name"
+                            required placeholder="First name">
                     </div>
 
                     <!-- Last Name -->
@@ -109,14 +112,8 @@
                         <label for="lastName">
                             Last Name <span class="required">*</span>
                         </label>
-                        <input 
-                            type="text" 
-                            id="lastName" 
-                            name="lastName" 
-                            title="Last Name" 
-                            autocomplete="family-name" 
-                            required
-                            placeholder="Last Name">
+                        <input type="text" id="lastName" name="lastName" title="Last Name" autocomplete="family-name"
+                            required placeholder="Last Name">
                     </div>
 
                     <!-- Organizational Title -->
@@ -124,15 +121,9 @@
                         <label for="orgTitle">
                             Your Title <span class="required">*</span>
                         </label>
-                        <input 
-                            type="text" 
-                            id="orgTitle" 
-                            name="orgTitle" 
-                            title="Organizational Title" 
-                            autocomplete="organization-title" 
-                            pattern="^[a-zA-Z\s\-]{7,}$"
-                            placeholder="Managing Director"
-                            required>
+                        <input type="text" id="orgTitle" name="orgTitle" title="Organizational Title"
+                            autocomplete="organization-title" pattern="^[a-zA-Z\s\-]{7,}$"
+                            placeholder="Managing Director" required>
                         <small>Minimum 7 characters (letters, hyphens, and spaces only)</small>
                     </div>
 
@@ -141,13 +132,7 @@
                         <label for="email">
                             Email Address <span class="required">*</span>
                         </label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            title="Email Address" 
-                            autocomplete="email" 
-                            required
+                        <input type="email" id="email" name="email" title="Email Address" autocomplete="email" required
                             placeholder="kyoyita.1@example.com">
                     </div>
 
@@ -156,14 +141,8 @@
                         <label for="phone">
                             Mobile Phone <span class="required">*</span>
                         </label>
-                        <input 
-                            type="tel" 
-                            id="phone" 
-                            name="phone" 
-                            title="Mobile Phone Number" 
-                            autocomplete="tel" 
-                            required
-                            placeholder="+256-709-100-553">
+                        <input type="tel" id="phone" name="phone" title="Mobile Phone Number" autocomplete="tel"
+                            required placeholder="+256-709-100-553">
                     </div>
 
                     <!-- Business Name -->
@@ -171,14 +150,8 @@
                         <label for="businessName">
                             Business/Organization Name <span class="required">*</span>
                         </label>
-                        <input 
-                            type="text" 
-                            id="businessName" 
-                            name="businessName" 
-                            title="Business Name" 
-                            autocomplete="organization" 
-                            required
-                            placeholder="Your Company Name">
+                        <input type="text" id="businessName" name="businessName" title="Business Name"
+                            autocomplete="organization" required placeholder="Your Company Name">
                     </div>
 
                     <!-- Membership Level -->
@@ -200,19 +173,12 @@
                         <label for="businessDesc">
                             Business/Organization Description
                         </label>
-                        <textarea 
-                            id="businessDesc" 
-                            name="businessDesc" 
-                            title="Business Description" 
-                            rows="5"
+                        <textarea id="businessDesc" name="businessDesc" title="Business Description" rows="5"
                             placeholder="Tell us about your business..."></textarea>
                     </div>
 
                     <!-- Hidden Timestamp -->
-                    <input 
-                        type="hidden" 
-                        id="timestamp" 
-                        name="timestamp">
+                    <input type="hidden" id="timestamp" name="timestamp">
 
                     <!-- Submit Button -->
                     <button type="submit" class="submit-btn">
@@ -244,7 +210,8 @@
                             <p class="card-price">UGX 50,000</p>
                         </div>
                         <p class="card-desc">Perfect for small businesses</p>
-                        <button class="info-btn" data-modal="modalBronze" aria-label="Learn more about Bronze Membership">
+                        <button class="info-btn" data-modal="modalBronze"
+                            aria-label="Learn more about Bronze Membership">
                             View Benefits <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
@@ -256,7 +223,8 @@
                             <p class="card-price">UGX 100,000</p>
                         </div>
                         <p class="card-desc">Growing businesses & organizations</p>
-                        <button class="info-btn" data-modal="modalSilver" aria-label="Learn more about Silver Membership">
+                        <button class="info-btn" data-modal="modalSilver"
+                            aria-label="Learn more about Silver Membership">
                             View Benefits <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
@@ -375,7 +343,8 @@
                     <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/Bukenya13" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <a href="https://github.com/Bukenya13" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
@@ -390,9 +359,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/join.js" defer></script>
+
 </body>
 
 </html>
