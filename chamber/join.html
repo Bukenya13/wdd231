@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="styles/join.css">
     <link rel="stylesheet" href="styles/medium.css" media="(min-width: 768px)">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 1025px)">
+    
     <!-- JavaScript -->
     <script src="scripts/main.js" defer></script>
     <script src="scripts/join.js" defer></script>
@@ -59,7 +60,7 @@
             <div class="logo">
                 <i class="fas fa-bell logo-bell"></i>
                 <div class="logo-text">
-                    <h1>Kampala Kireka Chamber</h1>
+                    <p class="logo-title">Kampala Kireka Chamber</p>
                     <p class="logo-subtitle">Building Business Community</p>
                 </div>
             </div>
@@ -80,92 +81,104 @@
                 </ul>
             </nav>
         </div>
-
     </header>
 
     <!-- Main Content -->
     <main>
-        <!-- Page Header -->
-        <section class="page-header">
-            <h1>Join Our Chamber</h1>
+        <!-- Page Header - SINGLE h1 element for the page -->
+        <section class="page-header" aria-labelledby="main-heading">
+            <h1 id="main-heading">Join Kampala Kireka Chamber of Commerce</h1>
             <p>Become part of the Kampala Kireka business community and unlock growth opportunities</p>
         </section>
 
         <!-- JOIN HERO SECTION -->
-        <section class="join-hero">
-            <h2>Join Our Chamber of Commerce</h2>
-            <p>Grow your business with networking opportunities and exclusive benefits</p>
+        <section class="join-hero" aria-labelledby="hero-heading">
+            <div class="join-hero-content">
+                <h2 id="hero-heading">Grow Your Business With Us</h2>
+                <p>Access networking opportunities and exclusive benefits for your business success</p>
+            </div>
         </section>
 
-        <!-- JOIN FORM SECTION -->
-        <section class="join-form-container">
+        <!-- CHANGE 2: Add h2 heading to join-form-container section -->
+        <section class="join-form-container" aria-labelledby="form-container-heading">
+            <h2 id="form-container-heading">Membership Registration</h2>
+            
             <!-- Application Form -->
-            <section class="form-section">
-                <h3>Membership Application</h3>
-                <form id="joinForm" method="get" action="thankyou.html">
+            <section class="form-section" aria-labelledby="form-heading">
+                <h3 id="form-heading">Membership Application</h3>
+                <form id="joinForm" method="get" action="thankyou.html" aria-label="Membership application form">
 
                     <!-- First Name -->
                     <div class="form-group">
                         <label for="firstName">
-                            First Name <span class="required">*</span>
+                            First Name <span class="required" aria-hidden="true">*</span>
+                            <span class="sr-only">Required field</span>
                         </label>
                         <input type="text" id="firstName" name="firstName" title="First Name" autocomplete="given-name"
-                            required placeholder="First name">
+                            required placeholder="First name" aria-required="true">
                     </div>
 
                     <!-- Last Name -->
                     <div class="form-group">
                         <label for="lastName">
-                            Last Name <span class="required">*</span>
+                            Last Name <span class="required" aria-hidden="true">*</span>
+                            <span class="sr-only">Required field</span>
                         </label>
                         <input type="text" id="lastName" name="lastName" title="Last Name" autocomplete="family-name"
-                            required placeholder="Last Name">
+                            required placeholder="Last Name" aria-required="true">
                     </div>
 
                     <!-- Organizational Title -->
                     <div class="form-group">
                         <label for="orgTitle">
-                            Your Title <span class="required">*</span>
+                            Your Title <span class="required" aria-hidden="true">*</span>
+                            <span class="sr-only">Required field</span>
                         </label>
                         <input type="text" id="orgTitle" name="orgTitle" title="Organizational Title"
                             autocomplete="organization-title" pattern="^[a-zA-Z\s\-]{7,}$"
-                            placeholder="Managing Director" required>
-                        <small>Minimum 7 characters (letters, hyphens, and spaces only)</small>
+                            placeholder="Managing Director" required aria-required="true"
+                            aria-describedby="title-help">
+                        <small id="title-help">Minimum 7 characters (letters, hyphens, and spaces only)</small>
                     </div>
 
                     <!-- Email -->
                     <div class="form-group">
                         <label for="email">
-                            Email Address <span class="required">*</span>
+                            Email Address <span class="required" aria-hidden="true">*</span>
+                            <span class="sr-only">Required field</span>
                         </label>
                         <input type="email" id="email" name="email" title="Email Address" autocomplete="email" required
-                            placeholder="kyoyita.1@example.com">
+                            placeholder="kyoyita.1@example.com" aria-required="true">
                     </div>
 
                     <!-- Phone -->
                     <div class="form-group">
                         <label for="phone">
-                            Mobile Phone <span class="required">*</span>
+                            Mobile Phone <span class="required" aria-hidden="true">*</span>
+                            <span class="sr-only">Required field</span>
                         </label>
                         <input type="tel" id="phone" name="phone" title="Mobile Phone Number" autocomplete="tel"
-                            required placeholder="+256-709-100-553">
+                            required placeholder="+256-709-100-553" aria-required="true">
                     </div>
 
                     <!-- Business Name -->
                     <div class="form-group">
                         <label for="businessName">
-                            Business/Organization Name <span class="required">*</span>
+                            Business/Organization Name <span class="required" aria-hidden="true">*</span>
+                            <span class="sr-only">Required field</span>
                         </label>
                         <input type="text" id="businessName" name="businessName" title="Business Name"
-                            autocomplete="organization" required placeholder="Your Company Name">
+                            autocomplete="organization" required placeholder="Your Company Name" aria-required="true">
                     </div>
 
                     <!-- Membership Level -->
                     <div class="form-group">
                         <label for="membershipLevel">
-                            Select Membership Level <span class="required">*</span>
+                            Select Membership Level <span class="required" aria-hidden="true">*</span>
+                            <span class="sr-only">Required field</span>
                         </label>
-                        <select id="membershipLevel" name="membershipLevel" title="Membership Level" required>
+                        <select id="membershipLevel" name="membershipLevel" title="Membership Level" required
+                            aria-required="true">
                             <option value="">-- Choose a membership level --</option>
                             <option value="np">NP Membership (Non-Profit - Free)</option>
                             <option value="bronze">Bronze Membership</option>
@@ -188,29 +201,29 @@
 
                     <!-- Submit Button -->
                     <button type="submit" class="submit-btn">
-                        <i class="fas fa-check-circle"></i> Submit Application
+                        <i class="fas fa-check-circle" aria-hidden="true"></i> Submit Application
                     </button>
                 </form>
             </section>
 
             <!-- Membership Cards Section -->
-            <section class="membership-cards-section">
-                <h3>Membership Levels</h3>
+            <section class="membership-cards-section" aria-labelledby="membership-heading">
+                <h3 id="membership-heading">Membership Levels</h3>
                 <div class="membership-cards">
                     <!-- NP Membership Card -->
-                    <div class="membership-card card-np" data-level="np">
+                    <article class="membership-card card-np" data-level="np">
                         <div class="card-header">
                             <h4>NP Membership</h4>
                             <p class="card-price">Free</p>
                         </div>
                         <p class="card-desc">For non-profit organizations</p>
                         <button class="info-btn" data-modal="modalNp" aria-label="Learn more about NP Membership">
-                            View Benefits <i class="fas fa-arrow-right"></i>
+                            View Benefits <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </button>
-                    </div>
+                    </article>
 
                     <!-- Bronze Membership Card -->
-                    <div class="membership-card card-bronze" data-level="bronze">
+                    <article class="membership-card card-bronze" data-level="bronze">
                         <div class="card-header">
                             <h4>Bronze Membership</h4>
                             <p class="card-price">UGX 50,000</p>
@@ -218,12 +231,12 @@
                         <p class="card-desc">Perfect for small businesses</p>
                         <button class="info-btn" data-modal="modalBronze"
                             aria-label="Learn more about Bronze Membership">
-                            View Benefits <i class="fas fa-arrow-right"></i>
+                            View Benefits <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </button>
-                    </div>
+                    </article>
 
                     <!-- Silver Membership Card -->
-                    <div class="membership-card card-silver" data-level="silver">
+                    <article class="membership-card card-silver" data-level="silver">
                         <div class="card-header">
                             <h4>Silver Membership</h4>
                             <p class="card-price">UGX 100,000</p>
@@ -231,98 +244,98 @@
                         <p class="card-desc">Growing businesses & organizations</p>
                         <button class="info-btn" data-modal="modalSilver"
                             aria-label="Learn more about Silver Membership">
-                            View Benefits <i class="fas fa-arrow-right"></i>
+                            View Benefits <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </button>
-                    </div>
+                    </article>
 
                     <!-- Gold Membership Card -->
-                    <div class="membership-card card-gold" data-level="gold">
+                    <article class="membership-card card-gold" data-level="gold">
                         <div class="card-header">
                             <h4>Gold Membership</h4>
                             <p class="card-price">UGX 200,000</p>
                         </div>
                         <p class="card-desc">Premium business benefits</p>
                         <button class="info-btn" data-modal="modalGold" aria-label="Learn more about Gold Membership">
-                            View Benefits <i class="fas fa-arrow-right"></i>
+                            View Benefits <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </button>
-                    </div>
+                    </article>
                 </div>
             </section>
         </section>
 
         <!-- Modals -->
         <!-- NP Membership Modal -->
-        <div id="modalNp" class="modal" aria-hidden="true">
+        <div id="modalNp" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalNpTitle">
             <div class="modal-content">
                 <button class="modal-close" aria-label="Close modal">&times;</button>
-                <h3>NP Membership Benefits</h3>
+                <h3 id="modalNpTitle">NP Membership Benefits</h3>
                 <p class="modal-price">Free</p>
                 <ul class="benefits-list">
-                    <li><i class="fas fa-check-circle"></i> Basic chamber membership</li>
-                    <li><i class="fas fa-check-circle"></i> Access to member directory</li>
-                    <li><i class="fas fa-check-circle"></i> Monthly newsletter</li>
-                    <li><i class="fas fa-check-circle"></i> Networking events (quarterly)</li>
-                    <li><i class="fas fa-check-circle"></i> Chamber website listing</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Basic chamber membership</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Access to member directory</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Monthly newsletter</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Networking events (quarterly)</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Chamber website listing</li>
                 </ul>
                 <p class="modal-desc">Perfect for non-profit organizations looking to build community connections.</p>
             </div>
         </div>
 
         <!-- Bronze Membership Modal -->
-        <div id="modalBronze" class="modal" aria-hidden="true">
+        <div id="modalBronze" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalBronzeTitle">
             <div class="modal-content">
                 <button class="modal-close" aria-label="Close modal">&times;</button>
-                <h3>Bronze Membership Benefits</h3>
+                <h3 id="modalBronzeTitle">Bronze Membership Benefits</h3>
                 <p class="modal-price">UGX 50,000/year</p>
                 <ul class="benefits-list">
-                    <li><i class="fas fa-check-circle"></i> All NP benefits</li>
-                    <li><i class="fas fa-check-circle"></i> Networking events (monthly)</li>
-                    <li><i class="fas fa-check-circle"></i> Business listing with description</li>
-                    <li><i class="fas fa-check-circle"></i> 10% discount on event tickets</li>
-                    <li><i class="fas fa-check-circle"></i> Monthly training webinars</li>
-                    <li><i class="fas fa-check-circle"></i> Social media promotion (quarterly)</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> All NP benefits</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Networking events (monthly)</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Business listing with description</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> 10% discount on event tickets</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Monthly training webinars</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Social media promotion (quarterly)</li>
                 </ul>
                 <p class="modal-desc">Ideal for small businesses ready to grow their network.</p>
             </div>
         </div>
 
         <!-- Silver Membership Modal -->
-        <div id="modalSilver" class="modal" aria-hidden="true">
+        <div id="modalSilver" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalSilverTitle">
             <div class="modal-content">
                 <button class="modal-close" aria-label="Close modal">&times;</button>
-                <h3>Silver Membership Benefits</h3>
+                <h3 id="modalSilverTitle">Silver Membership Benefits</h3>
                 <p class="modal-price">UGX 100,000/year</p>
                 <ul class="benefits-list">
-                    <li><i class="fas fa-check-circle"></i> All Bronze benefits</li>
-                    <li><i class="fas fa-check-circle"></i> Spotlight feature (2x per year)</li>
-                    <li><i class="fas fa-check-circle"></i> 20% discount on event tickets</li>
-                    <li><i class="fas fa-check-circle"></i> Business card display area</li>
-                    <li><i class="fas fa-check-circle"></i> Weekly training sessions</li>
-                    <li><i class="fas fa-check-circle"></i> Newsletter feature article (quarterly)</li>
-                    <li><i class="fas fa-check-circle"></i> Social media promotion (bi-weekly)</li>
-                    <li><i class="fas fa-check-circle"></i> Advertising opportunities</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> All Bronze benefits</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Spotlight feature (2x per year)</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> 20% discount on event tickets</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Business card display area</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Weekly training sessions</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Newsletter feature article (quarterly)</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Social media promotion (bi-weekly)</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Advertising opportunities</li>
                 </ul>
                 <p class="modal-desc">Perfect for growing businesses seeking more visibility.</p>
             </div>
         </div>
 
         <!-- Gold Membership Modal -->
-        <div id="modalGold" class="modal" aria-hidden="true">
+        <div id="modalGold" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalGoldTitle">
             <div class="modal-content">
                 <button class="modal-close" aria-label="Close modal">&times;</button>
-                <h3>Gold Membership Benefits</h3>
+                <h3 id="modalGoldTitle">Gold Membership Benefits</h3>
                 <p class="modal-price">UGX 200,000/year</p>
                 <ul class="benefits-list">
-                    <li><i class="fas fa-check-circle"></i> All Silver benefits</li>
-                    <li><i class="fas fa-check-circle"></i> Spotlight feature (monthly)</li>
-                    <li><i class="fas fa-check-circle"></i> 30% discount on all events</li>
-                    <li><i class="fas fa-check-circle"></i> Premium booth at trade fairs</li>
-                    <li><i class="fas fa-check-circle"></i> Dedicated account manager</li>
-                    <li><i class="fas fa-check-circle"></i> VIP networking events (monthly)</li>
-                    <li><i class="fas fa-check-circle"></i> Front page website featuring</li>
-                    <li><i class="fas fa-check-circle"></i> Social media promotion (weekly)</li>
-                    <li><i class="fas fa-check-circle"></i> Premium advertising package</li>
-                    <li><i class="fas fa-check-circle"></i> Exclusive business opportunities</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> All Silver benefits</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Spotlight feature (monthly)</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> 30% discount on all events</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Premium booth at trade fairs</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Dedicated account manager</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> VIP networking events (monthly)</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Front page website featuring</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Social media promotion (weekly)</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Premium advertising package</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Exclusive business opportunities</li>
                 </ul>
                 <p class="modal-desc">For established businesses wanting maximum visibility and benefits.</p>
             </div>
@@ -364,7 +377,6 @@
             </div>
         </div>
     </footer>
-
 
 </body>
 
