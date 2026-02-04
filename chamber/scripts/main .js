@@ -1,5 +1,5 @@
 // ========================================
-// MUKONO CHAMBER OF COMMERCE - MAIN JS
+// KAMPALA KIREKA CHAMBER OF COMMERCE - MAIN JS
 // ========================================
 
 // ========================================
@@ -86,11 +86,11 @@ function safeGetElementById(id) {
 
 const WEATHER_CONFIG = {
     apiKey: '4b6617030376791602a616bc73c4e742',
-    city: 'Mukono',
+    city: 'Kampala',
     country: 'UG',
     units: 'metric',
-    lat: 0.3531,
-    lon: 32.7554
+    lat: 0.3476,
+    lon: 32.5825
 };
 
 // ========================================
@@ -142,7 +142,8 @@ function displayCurrentWeather(data) {
     weatherDiv.innerHTML = `
         <div class="weather-current">
             <img src="https://openweathermap.org/img/wn/${icon}@2x.png" 
-                 alt="${description}">
+                 alt="${description}"
+                 loading="lazy">
             <div class="weather-info">
                 <h3>${temp}°C</h3>
                 <p style="text-transform: capitalize; font-weight: 600; color: #264653;">${description}</p>
@@ -207,7 +208,9 @@ function displayWeatherForecast(data) {
         forecastHTML += `
             <div class="forecast-day">
                 <p><strong>${date}</strong></p>
-                <img src="https://openweathermap.org/img/wn/${icon}.png" alt="${description}">
+                <img src="https://openweathermap.org/img/wn/${icon}.png" 
+                     alt="${description}"
+                     loading="lazy">
                 <p>Temp: ${temp}°C</p>
                 <p style="text-transform: capitalize;">${description}</p>
             </div>
@@ -275,11 +278,12 @@ function displayCompanySpotlight(companies) {
             <div class="spotlight-card">
                 <img src="${company.image}" 
                      alt="${company.name}"
+                     loading="lazy"
                      onerror="this.src='images/placeholder.jpg'">
                 <h3>${company.name}</h3>
                 ${company.tagline ? `<p class="company-tagline">"${company.tagline}"</p>` : ''}
-                <p><strong></strong> ${company.phone}</p>
-                <p><strong></strong> ${company.address}</p>
+                <p><strong>Phone:</strong> ${company.phone}</p>
+                <p><strong>Address:</strong> ${company.address}</p>
                 <span class="membership-badge ${company.membershipLevel.toLowerCase()}">
                     ${company.membershipLevel} Member
                 </span>
@@ -343,12 +347,12 @@ function trackVisit() {
     localStorage.setItem('visitCount', (currentVisitCount + 1).toString());
     
     if (lastVisitDate) {
-        const lastVisit = new Date(lastVisitDate);
-        const timeDiff = now - lastVisit;
+        const lastVisitObj = new Date(lastVisitDate);
+        const timeDiff = now - lastVisitObj;
         const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
         
         // Update display
-        lastVisit.textContent = lastVisit.toLocaleDateString();
+        lastVisit.textContent = lastVisitObj.toLocaleDateString();
         daysBetween.textContent = daysDiff;
         
         if (daysDiff === 0) {
@@ -374,7 +378,7 @@ function trackVisit() {
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Mukono Chamber website loaded successfully!');
+    console.log('Kampala Kireka Chamber website loaded successfully!');
     
     // Initialize footer (exists on all pages)
     updateFooter();
@@ -382,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check which page we're on and initialize accordingly
     const currentPage = window.location.pathname;
     
-    if (currentPage.includes('index.html') || currentPage === '/') {
+    if (currentPage.includes('index.html') || currentPage === '/' || currentPage.endsWith('chamber/')) {
         // Homepage - initialize weather and spotlight
         console.log('Initializing homepage features...');
         fetchCurrentWeather();
@@ -395,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Only set up weather refresh if we're on homepage
-    if (currentPage.includes('index.html') || currentPage === '/') {
+    if (currentPage.includes('index.html') || currentPage === '/' || currentPage.endsWith('chamber/')) {
         // Refresh weather every 30 minutes (1800000 milliseconds)
         setInterval(() => {
             fetchCurrentWeather();

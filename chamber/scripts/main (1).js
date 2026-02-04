@@ -1,5 +1,5 @@
 // ========================================
-// MUKONO CHAMBER OF COMMERCE - MAIN JS
+// KAMPALA KIREKA CHAMBER OF COMMERCE - MAIN JS
 // ========================================
 
 // ========================================
@@ -15,13 +15,11 @@ overlay.className = 'nav-overlay';
 document.body.appendChild(overlay);
 
 if (hamburger && navMenu) {
-    // Toggle menu on hamburger click
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
         overlay.classList.toggle('active');
         
-        // Prevent body scroll when menu is open
         if (navMenu.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -29,7 +27,6 @@ if (hamburger && navMenu) {
         }
     });
 
-    // Close menu when clicking a navigation link
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
@@ -39,7 +36,6 @@ if (hamburger && navMenu) {
         });
     });
 
-    // Close menu when clicking overlay
     overlay.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
@@ -47,7 +43,6 @@ if (hamburger && navMenu) {
         document.body.style.overflow = '';
     });
     
-    // Close menu on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
             hamburger.classList.remove('active');
@@ -81,32 +76,33 @@ function safeGetElementById(id) {
 }
 
 // ========================================
-// 3. WEATHER API CONFIGURATION
+// 3. WEATHER API CONFIGURATION - KAMPALA
 // ========================================
 
 const WEATHER_CONFIG = {
     apiKey: '4b6617030376791602a616bc73c4e742',
-    city: 'Mukono',
+    city: 'Kampala',
     country: 'UG',
     units: 'metric',
-    lat: 0.3531,
-    lon: 32.7554
+    lat: 0.3476,
+    lon: 32.5825
 };
 
 // ========================================
-// 4. FETCH CURRENT WEATHER (WITH NULL CHECK)
+// 4. FETCH CURRENT WEATHER
 // ========================================
 
 async function fetchCurrentWeather() {
     const weatherDiv = safeGetElementById('current-weather');
     if (!weatherDiv) {
-        console.log('Current weather element not found - skipping weather fetch');
+        console.log('Current weather element not found');
         return;
     }
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${WEATHER_CONFIG.city},${WEATHER_CONFIG.country}&appid=${WEATHER_CONFIG.apiKey}&units=${WEATHER_CONFIG.units}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${WEATHER_CONFIG.lat}&lon=${WEATHER_CONFIG.lon}&appid=${WEATHER_CONFIG.apiKey}&units=${WEATHER_CONFIG.units}`;
     
     try {
+        console.log('Fetching weather from:', url);
         const response = await fetch(url);
         
         if (!response.ok) {
@@ -114,6 +110,7 @@ async function fetchCurrentWeather() {
         }
         
         const data = await response.json();
+        console.log('Weather data received:', data);
         displayCurrentWeather(data);
     } catch (error) {
         console.error('Error fetching current weather:', error);
@@ -125,7 +122,7 @@ async function fetchCurrentWeather() {
 }
 
 // ========================================
-// 5. DISPLAY CURRENT WEATHER (WITH NULL CHECK)
+// 5. DISPLAY CURRENT WEATHER
 // ========================================
 
 function displayCurrentWeather(data) {
@@ -137,37 +134,40 @@ function displayCurrentWeather(data) {
     const description = data.weather[0].description;
     const icon = data.weather[0].icon;
     const humidity = data.main.humidity;
-    const windSpeed = data.wind.speed;
+    const windSpeed = (data.wind.speed * 3.6).toFixed(1); // Convert m/s to km/h
     
     weatherDiv.innerHTML = `
         <div class="weather-current">
             <img src="https://openweathermap.org/img/wn/${icon}@2x.png" 
-                 alt="${description}">
+                 alt="${description}"
+                 loading="lazy"
+                 style="width: 100px; height: 100px;">
             <div class="weather-info">
                 <h3>${temp}°C</h3>
                 <p style="text-transform: capitalize; font-weight: 600; color: #264653;">${description}</p>
                 <p><strong>Feels like:</strong> ${feelsLike}°C</p>
                 <p><strong>Humidity:</strong> ${humidity}%</p>
-                <p><strong>Wind:</strong> ${windSpeed} m/s</p>
+                <p><strong>Wind:</strong> ${windSpeed} km/h</p>
             </div>
         </div>
     `;
 }
 
 // ========================================
-// 6. FETCH 5-DAY WEATHER FORECAST (WITH NULL CHECK)
+// 6. FETCH 5-DAY WEATHER FORECAST
 // ========================================
 
 async function fetchWeatherForecast() {
     const forecastDiv = safeGetElementById('forecast-weather');
     if (!forecastDiv) {
-        console.log('Forecast weather element not found - skipping forecast fetch');
+        console.log('Forecast weather element not found');
         return;
     }
 
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${WEATHER_CONFIG.city},${WEATHER_CONFIG.country}&appid=${WEATHER_CONFIG.apiKey}&units=${WEATHER_CONFIG.units}`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${WEATHER_CONFIG.lat}&lon=${WEATHER_CONFIG.lon}&appid=${WEATHER_CONFIG.apiKey}&units=${WEATHER_CONFIG.units}`;
     
     try {
+        console.log('Fetching forecast from:', url);
         const response = await fetch(url);
         
         if (!response.ok) {
@@ -175,6 +175,7 @@ async function fetchWeatherForecast() {
         }
         
         const data = await response.json();
+        console.log('Forecast data received:', data);
         displayWeatherForecast(data);
     } catch (error) {
         console.error('Error fetching weather forecast:', error);
@@ -187,19 +188,19 @@ async function fetchWeatherForecast() {
 }
 
 // ========================================
-// 7. DISPLAY WEATHER FORECAST (WITH NULL CHECK)
+// 7. DISPLAY WEATHER FORECAST
 // ========================================
 
 function displayWeatherForecast(data) {
     const forecastDiv = safeGetElementById('forecast-weather');
     if (!forecastDiv) return;
 
-    let forecastHTML = '';
+    let forecastHTML = '<div class="forecast-grid">';
     
     // Show one forecast per day (every 8 items = 24 hours)
     for (let i = 0; i < data.list.length; i += 8) {
         const item = data.list[i];
-        const date = new Date(item.dt * 1000).toLocaleDateString();
+        const date = new Date(item.dt * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
         const temp = Math.round(item.main.temp);
         const description = item.weather[0].description;
         const icon = item.weather[0].icon;
@@ -207,24 +208,28 @@ function displayWeatherForecast(data) {
         forecastHTML += `
             <div class="forecast-day">
                 <p><strong>${date}</strong></p>
-                <img src="https://openweathermap.org/img/wn/${icon}.png" alt="${description}">
-                <p>Temp: ${temp}°C</p>
-                <p style="text-transform: capitalize;">${description}</p>
+                <img src="https://openweathermap.org/img/wn/${icon}.png" 
+                     alt="${description}"
+                     loading="lazy"
+                     style="width: 60px; height: 60px;">
+                <p><strong>${temp}°C</strong></p>
+                <p style="text-transform: capitalize; font-size: 0.9rem;">${description}</p>
             </div>
         `;
     }
     
+    forecastHTML += '</div>';
     forecastDiv.innerHTML = forecastHTML;
 }
 
 // ========================================
-// 8. FETCH COMPANY SPOTLIGHT (WITH NULL CHECK)
+// 8. FETCH COMPANY SPOTLIGHT
 // ========================================
 
 async function fetchCompanySpotlight() {
     const spotlightDiv = safeGetElementById('spotlight-container');
     if (!spotlightDiv) {
-        console.log('Spotlight container not found - skipping company spotlight fetch');
+        console.log('Spotlight container not found');
         return;
     }
 
@@ -236,18 +241,19 @@ async function fetchCompanySpotlight() {
         }
         
         const companies = await response.json();
+        console.log('Members data received:', companies);
         displayCompanySpotlight(companies);
     } catch (error) {
         console.error('Error fetching company data:', error);
         if (spotlightDiv) {
             spotlightDiv.innerHTML = 
-                '<p style="color: #e76f51; text-align: center;">Unable to load member spotlight. Please ensure data/members.json exists.</p>';
+                '<p style="color: #e76f51; text-align: center;">Unable to load member spotlight.</p>';
         }
     }
 }
 
 // ========================================
-// 9. DISPLAY COMPANY SPOTLIGHT (WITH NULL CHECK)
+// 9. DISPLAY COMPANY SPOTLIGHT
 // ========================================
 
 function displayCompanySpotlight(companies) {
@@ -268,18 +274,19 @@ function displayCompanySpotlight(companies) {
     const numToDisplay = Math.min(3, qualifiedMembers.length);
     const selectedCompanies = getRandomCompanies(qualifiedMembers, numToDisplay);
     
-    let spotlightHTML = '';
+    let spotlightHTML = '<div class="spotlight-grid">';
     
     selectedCompanies.forEach(company => {
         spotlightHTML += `
             <div class="spotlight-card">
                 <img src="${company.image}" 
                      alt="${company.name}"
-                     onerror="this.src='images/placeholder.jpg'">
+                     loading="lazy"
+                     onerror="this.src='https://via.placeholder.com/300?text=No+Image'">
                 <h3>${company.name}</h3>
                 ${company.tagline ? `<p class="company-tagline">"${company.tagline}"</p>` : ''}
-                <p><strong></strong> ${company.phone}</p>
-                <p><strong></strong> ${company.address}</p>
+                <p><strong>Phone:</strong> ${company.phone}</p>
+                <p><strong>Address:</strong> ${company.address}</p>
                 <span class="membership-badge ${company.membershipLevel.toLowerCase()}">
                     ${company.membershipLevel} Member
                 </span>
@@ -291,6 +298,7 @@ function displayCompanySpotlight(companies) {
         `;
     });
     
+    spotlightHTML += '</div>';
     spotlightDiv.innerHTML = spotlightHTML;
 }
 
@@ -308,13 +316,11 @@ function getRandomCompanies(array, count) {
 // ========================================
 
 function updateFooter() {
-    // Set current year
     const yearSpan = safeGetElementById('currentYear');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
     
-    // Set last modified date
     const modifiedSpan = safeGetElementById('lastModified');
     if (modifiedSpan) {
         modifiedSpan.textContent = document.lastModified;
@@ -331,24 +337,21 @@ function trackVisit() {
     const daysBetween = safeGetElementById('days-between');
     
     if (!visitInfo || !lastVisit || !daysBetween) {
-        console.log('Visit tracking elements not found - skipping visit tracking');
+        console.log('Visit tracking elements not found');
         return;
     }
 
     const now = new Date();
     const lastVisitDate = localStorage.getItem('lastVisit');
-    const currentVisitCount = parseInt(localStorage.getItem('visitCount') || '0');
 
-    // Update visit count
-    localStorage.setItem('visitCount', (currentVisitCount + 1).toString());
+    localStorage.setItem('visitCount', (parseInt(localStorage.getItem('visitCount') || '0') + 1).toString());
     
     if (lastVisitDate) {
-        const lastVisit = new Date(lastVisitDate);
-        const timeDiff = now - lastVisit;
+        const lastVisitObj = new Date(lastVisitDate);
+        const timeDiff = now - lastVisitObj;
         const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
         
-        // Update display
-        lastVisit.textContent = lastVisit.toLocaleDateString();
+        lastVisit.textContent = lastVisitObj.toLocaleDateString();
         daysBetween.textContent = daysDiff;
         
         if (daysDiff === 0) {
@@ -359,13 +362,11 @@ function trackVisit() {
             visitInfo.textContent = `You last visited ${daysDiff} days ago.`;
         }
     } else {
-        // First visit
         visitInfo.textContent = "Welcome! Let us know if you have any questions.";
         lastVisit.textContent = "This is your first visit!";
         daysBetween.textContent = "0";
     }
     
-    // Store current visit
     localStorage.setItem('lastVisit', now.toString());
 }
 
@@ -374,29 +375,23 @@ function trackVisit() {
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Mukono Chamber website loaded successfully!');
+    console.log('Kampala Kireka Chamber website loaded successfully!');
     
-    // Initialize footer (exists on all pages)
     updateFooter();
     
-    // Check which page we're on and initialize accordingly
     const currentPage = window.location.pathname;
     
-    if (currentPage.includes('index.html') || currentPage === '/') {
-        // Homepage - initialize weather and spotlight
+    if (currentPage.includes('index.html') || currentPage === '/' || currentPage.endsWith('chamber/')) {
         console.log('Initializing homepage features...');
         fetchCurrentWeather();
         fetchWeatherForecast();
         fetchCompanySpotlight();
     } else if (currentPage.includes('discover.html')) {
-        // Discover page - initialize visit tracking
         console.log('Initializing discover page features...');
         trackVisit();
     }
     
-    // Only set up weather refresh if we're on homepage
-    if (currentPage.includes('index.html') || currentPage === '/') {
-        // Refresh weather every 30 minutes (1800000 milliseconds)
+    if (currentPage.includes('index.html') || currentPage === '/' || currentPage.endsWith('chamber/')) {
         setInterval(() => {
             fetchCurrentWeather();
             fetchWeatherForecast();
@@ -408,7 +403,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // 14. ERROR HANDLING FOR IMAGES
 // ========================================
 
-// Add default error handler for all images on page load
 window.addEventListener('load', () => {
     document.querySelectorAll('img').forEach(img => {
         if (!img.hasAttribute('onerror')) {
