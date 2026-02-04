@@ -705,7 +705,7 @@ footer {
 
 .view-btn.active {
     background: white;
-    color: #1e3a8a;
+    color: var(--primary-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -754,7 +754,7 @@ footer {
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     display: flex;
     flex-direction: column;
-    border: 1px solid #f0f0f0;
+    border: 1px solid var(--border-color);
     position: relative;
 }
 
@@ -836,7 +836,7 @@ footer {
     color: #2563eb;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: var(--transition);
 }
 
 .member-card p a:hover {
@@ -864,26 +864,26 @@ footer {
 .membership-badge.gold {
     background: linear-gradient(135deg, #dbeafe, #bfdbfe);
     color: #1e3a8a;
-    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3);
 }
 
 .membership-badge.silver {
     background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
     color: #1e3a8a;
-    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 4px 10px rgba(30, 58, 138, 0.2);
 }
 
 /* ===== VISIT BUTTON ===== */
 .visit-btn {
     margin-top: auto;
     padding: 0.85rem 1.75rem;
-    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-decoration: none;
     border-radius: 25px;
     text-align: center;
     font-weight: 700;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     display: inline-block;
     align-self: flex-start;
     border: 2px solid transparent;
@@ -892,7 +892,7 @@ footer {
 }
 
 .visit-btn:hover {
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     transform: translateX(5px);
 }
 
@@ -900,7 +900,7 @@ footer {
 .no-members {
     text-align: center;
     padding: 3rem;
-    color: #999;
+    color: var(--text-light);
     font-size: 1.1rem;
 }
 
@@ -920,7 +920,7 @@ footer {
 }
 
 .filter-section h3 {
-    color: #1e3a8a;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -932,17 +932,17 @@ footer {
 
 .filter-btn {
     padding: 0.6rem 1.5rem;
-    border: 2px solid #2563eb;
+    border: 2px solid var(--primary-color);
     background: white;
-    color: #2563eb;
+    color: var(--primary-color);
     border-radius: 25px;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .filter-btn.active {
-    background: #2563eb;
+    background: var(--primary-color);
     color: white;
 }
 
@@ -994,58 +994,19 @@ footer {
     background: linear-gradient(135deg, #25d366, #1fa857);
 }
 
-/* ===== RESPONSIVE - TABLET ===== */
-@media (max-width: 768px) {
-    .directory-hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .grid-view {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .directory-stats {
-        gap: 1.5rem;
-    }
-
-    .list-view .member-card {
-        flex-direction: column;
-    }
-
-    .list-view .member-card img {
-        width: 100% !important;
-        height: 200px !important;
-    }
-
-    .member-card img {
-        height: 220px;
-    }
-
-    .filter-section {
-        margin-left: 2rem;
-        margin-right: 2rem;
-    }
-}
-
 /* ===== RESPONSIVE - MOBILE ===== */
-@media (max-width: 500px) {
+@media (max-width: 767px) {
+    .directory-hero-content h1 {
+        font-size: 2rem;
+    }
+
     .directory-hero {
         padding: 2rem 1rem;
         min-height: 500px;
     }
 
-    .directory-hero-content h1 {
-        font-size: 2rem;
-    }
-
     .grid-view {
         grid-template-columns: 1fr;
-    }
-
-    .view-toggle {
-        width: 100%;
-        justify-content: center;
     }
 
     .directory-stats {
@@ -1057,12 +1018,93 @@ footer {
         width: 100%;
     }
 
+    .list-view .member-card {
+        flex-direction: column;
+    }
+
+    .list-view .member-card img {
+        width: 100% !important;
+        height: 200px !important;
+    }
+
     .filter-section {
         margin-left: 1rem;
         margin-right: 1rem;
     }
+}
 
-    .member-card {
-        margin: 0 1rem;
+/* ===== RESPONSIVE - TABLET ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .directory-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .grid-view {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .directory-stats {
+        gap: 1.5rem;
+    }
+
+    .list-view .member-card {
+        flex-direction: row;
+    }
+
+    .list-view .member-card img {
+        width: 200px !important;
+        height: 200px !important;
+        min-width: 200px;
+    }
+
+    .filter-section {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+}
+
+/* ===== RESPONSIVE - DESKTOP ===== */
+@media (min-width: 1025px) {
+    .directory-hero {
+        min-height: 700px;
+        padding: 5rem 2rem;
+    }
+
+    .directory-hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .grid-view {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .list-view .member-card {
+        flex-direction: row;
+    }
+
+    .list-view .member-card img {
+        width: 250px !important;
+        height: 250px !important;
+        min-width: 250px;
+    }
+
+    .filter-section {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .filter-buttons {
+        gap: 2rem;
+    }
+
+    .directory-stats {
+        gap: 3rem;
+    }
+
+    .stat-item {
+        padding: 2rem 3rem;
     }
 }

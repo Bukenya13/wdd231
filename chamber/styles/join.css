@@ -1,8 +1,8 @@
-/* ===== PAGE HEADER (JOIN PAGE SPECIFIC) ===== */
+/* ===== PAGE HEADER ===== */
 .page-header {
     text-align: center;
     padding: 3rem 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
     border-radius: 8px;
     margin-bottom: 2rem;
     animation: fadeInDown 0.6s ease;
@@ -86,6 +86,7 @@
     font-size: 1rem;
     transition: var(--transition);
     background: white;
+    color: var(--text-dark);
 }
 
 .form-group input:focus,
@@ -93,19 +94,19 @@
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
 }
 
 .form-group input:valid:not(:placeholder-shown),
 .form-group textarea:valid:not(:placeholder-shown) {
     border-color: var(--success-color);
-    background-color: rgba(72, 187, 120, 0.05);
+    background-color: rgba(16, 185, 129, 0.05);
 }
 
 .form-group input:invalid:not(:placeholder-shown),
 .form-group textarea:invalid:not(:placeholder-shown) {
     border-color: var(--danger-color);
-    background-color: rgba(245, 101, 101, 0.05);
+    background-color: rgba(239, 68, 68, 0.05);
 }
 
 .form-group select {
@@ -137,13 +138,13 @@
     gap: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.4);
     margin-top: 1rem;
 }
 
 .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.6);
 }
 
 .submit-btn:active {
@@ -185,7 +186,7 @@
     margin: 0 auto;
 }
 
-/* ===== MODERN MEMBERSHIP CARDS - ENLARGED ===== */
+/* ===== MEMBERSHIP CARDS ===== */
 .membership-card {
     padding: 3rem 2.5rem;
     border: 3px solid transparent;
@@ -203,7 +204,6 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* Card background gradient effect */
 .membership-card::before {
     content: '';
     position: absolute;
@@ -222,12 +222,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.02) 0%, rgba(118, 75, 162, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.02) 0%, rgba(245, 158, 11, 0.02) 100%);
     pointer-events: none;
     z-index: 0;
 }
 
-/* Staggered animation */
 .membership-card:nth-child(1) {
     animation-delay: 0.1s;
 }
@@ -255,18 +254,17 @@
     }
 }
 
-/* Hover effect - Scale and shadow */
 .membership-card:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 25px 50px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 25px 50px rgba(30, 58, 138, 0.3);
     transform: translateY(-12px) scale(1.03);
 }
 
 .membership-card:hover::after {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.08) 0%, rgba(245, 158, 11, 0.08) 100%);
 }
 
-/* Card header section */
+/* ===== CARD HEADER ===== */
 .card-header {
     margin-bottom: 2rem;
     position: relative;
@@ -306,7 +304,7 @@
     color: var(--text-light);
 }
 
-/* Card description */
+/* ===== CARD DESCRIPTION ===== */
 .card-desc {
     color: var(--text-light);
     font-size: 1.05rem;
@@ -318,7 +316,7 @@
     min-height: 60px;
 }
 
-/* Card features list */
+/* ===== CARD FEATURES ===== */
 .card-features {
     list-style: none;
     padding: 0;
@@ -345,11 +343,11 @@
 
 .card-features li::before {
     content: '✓';
-    color: var(--success-color);
+    color: white;
     font-weight: 700;
     font-size: 1.4rem;
     flex-shrink: 0;
-    background: rgba(72, 187, 120, 0.1);
+    background: var(--success-color);
     width: 32px;
     height: 32px;
     display: flex;
@@ -358,7 +356,7 @@
     border-radius: 50%;
 }
 
-/* Info Button - Modern style */
+/* ===== INFO BUTTON ===== */
 .info-btn {
     width: 100%;
     padding: 1.3rem 1.5rem;
@@ -379,13 +377,13 @@
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
 }
 
 .info-btn:hover {
     background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.6);
 }
 
 .info-btn:active {
@@ -402,7 +400,7 @@
     font-size: 1.4rem;
 }
 
-/* ===== MODAL STYLES ===== */
+/* ===== MODAL ===== */
 .modal {
     display: none;
     position: fixed;
@@ -529,16 +527,16 @@
     border-top: 2px solid var(--border-color);
 }
 
-/* ===== FORM ERROR STYLES ===== */
+/* ===== FORM ERRORS ===== */
 .form-group input.error,
 .form-group textarea.error {
     border-color: var(--danger-color) !important;
-    background-color: rgba(245, 101, 101, 0.05) !important;
-    box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.1) !important;
+    background-color: rgba(239, 68, 68, 0.05) !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
 }
 
 .validation-error-message {
-    background: rgba(254, 215, 215, 1);
+    background: rgba(254, 226, 226, 1);
     color: var(--danger-color);
     padding: 1rem 1.5rem;
     border-radius: 8px;
@@ -634,7 +632,7 @@
     }
 }
 
-/* ===== RESPONSIVE - MEDIUM ===== */
+/* ===== RESPONSIVE - TABLET ===== */
 @media (min-width: 768px) and (max-width: 1024px) {
     .join-container {
         grid-template-columns: 1fr;
@@ -670,7 +668,7 @@
     }
 }
 
-/* ===== RESPONSIVE - LARGE ===== */
+/* ===== RESPONSIVE - DESKTOP ===== */
 @media (min-width: 1025px) {
     .join-container {
         grid-template-columns: 1fr 1fr;
