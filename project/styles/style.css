@@ -263,7 +263,7 @@ body {
 }
 
 .service-item {
-    background: linear-gradient(135deg, #ffffff, var(--light-golden));
+    background: var(--primary-color);
     padding: 2rem;
     border-radius: 8px;
     border: 2px solid var(--golden-color);
@@ -275,19 +275,19 @@ body {
 .service-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
-    border-color: var(--dark-golden);
-    background: linear-gradient(135deg, var(--light-golden), #ffffff);
+    border-color: var(--light-golden);
+    background: #0d2463;
 }
 
 .service-item h3 {
-    color: var(--primary-color);
+    color: var(--golden-color);
     margin-bottom: 1rem;
     font-size: 1.3rem;
     font-weight: 700;
 }
 
 .service-item p {
-    color: var(--text-color);
+    color: white;
 }
 
 /* Wellness Highlight Section */
@@ -337,19 +337,17 @@ body {
 }
 
 .wellness-item {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(244, 228, 166, 0.15));
+    background: var(--primary-color);
     padding: 2rem;
     border-radius: 8px;
     border: 2px solid var(--golden-color);
     text-align: center;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
 }
 
 .wellness-item:hover {
-    background: linear-gradient(135deg, rgba(244, 228, 166, 0.2), rgba(212, 175, 55, 0.15));
+    background: #0d2463;
     transform: translateY(-8px);
     border-color: var(--light-golden);
     box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
@@ -428,7 +426,7 @@ body {
 
 .contact-item {
     padding: 1.5rem;
-    background: linear-gradient(135deg, #ffffff, var(--light-golden));
+    background: var(--primary-color);
     border-radius: 8px;
     border: 2px solid var(--golden-color);
     box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
@@ -438,17 +436,18 @@ body {
 .contact-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
-    border-color: var(--dark-golden);
+    border-color: var(--light-golden);
+    background: #0d2463;
 }
 
 .contact-item h3 {
-    color: var(--primary-color);
+    color: var(--golden-color);
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
 
 .contact-item a {
-    color: var(--primary-color);
+    color: var(--golden-color);
     text-decoration: none;
     font-weight: 600;
 }
