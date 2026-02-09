@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Update copyright year
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
     const navClose = document.getElementById('nav-close');
