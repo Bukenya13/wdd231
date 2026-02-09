@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the attractions and features of our area">
+    <title>Discover Our Area | Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="scripts/discover.js" type="module" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            const navClose = document.getElementById('nav-close');
+            const navOverlay = document.getElementById('nav-overlay');
+
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.add('open');
+                navOverlay.classList.add('open');
+                hamburger.classList.add('open');
+            });
+
+            navClose.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navOverlay.classList.remove('open');
+                hamburger.classList.remove('open');
+            });
+
+            navOverlay.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navOverlay.classList.remove('open');
+                hamburger.classList.remove('open');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Chamber of Commerce</h1>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div id="visit-message" class="visit-message">
+            <!-- Dynamic visit message will go here -->
+        </div>
+    </header>
+    
+    <div class="nav-overlay" id="nav-overlay"></div>
+    <nav class="navbar" id="nav-menu">
+        <button class="nav-close" id="nav-close" aria-label="Close navigation">&times;</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="discover.html" class="active">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main class="discover-main">
+        <h1>Discover Our Area</h1>
+        <div class="demographics">
+            <h2>Area Demographics</h2>
+            <p>Population: 50,000 | Median Age: 35 | Median Income: $65,000</p>
+        </div>
+        
+        <div class="attractions-grid" id="attractions-container">
+            <!-- Cards will be dynamically generated here -->
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p>123 Business Avenue<br>Springfield, ST 12345</p>
+                <p><a href="tel:+1-555-123-4567">(555) 123-4567</a></p>
+                <p><a href="mailto:info@chamber.org">info@chamber.org</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="directory.html">Member Directory</a></p>
+                <p><a href="join.html">Join Chamber</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 9AM - 5PM<br>Saturday & Sunday: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Chamber of Commerce. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

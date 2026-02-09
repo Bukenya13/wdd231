@@ -381,3 +381,43 @@
         }
     }
 }
+@media (min-width: 641px) {
+    .attractions-grid {
+        grid-template-areas:
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card8";
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Discover Page - Medium Screens */
+    .attractions-grid {
+        grid-template-areas:
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card8";
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    
+    /* Hover effect for medium and larger screens */
+    .attraction-card {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .attraction-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    
+    .attraction-card img {
+        transition: transform 0.5s ease;
+    }
+    
+    .attraction-card:hover img {
+        transform: scale(1.05);
+    }
+}

@@ -279,3 +279,48 @@ h3 {
         padding: 2rem 3rem;
     }
 }
+@media (min-width: 1025px) {
+    .attractions-grid {
+        grid-template-areas:
+            "card1 card2 card3 card4"
+            "card5 card6 card7 card8";
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+    
+    /* Discover Page - Large Screens */
+    .attractions-grid {
+        grid-template-areas:
+            "card1 card2 card3 card4"
+            "card5 card6 card7 card8";
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem;
+    }
+    
+    /* Enhanced Hover Effects for Large Screens */
+    .attraction-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .attraction-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    
+    .attraction-card img {
+        transition: all 0.5s ease;
+        filter: brightness(0.95);
+    }
+    
+    .attraction-card:hover img {
+        transform: scale(1.1);
+        filter: brightness(1.1) saturate(1.2);
+    }
+    
+    .demographics {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
