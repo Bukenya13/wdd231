@@ -56,6 +56,12 @@ header {
     align-items: center;
 }
 
+.header-content .logo-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -365,8 +371,9 @@ address {
 
 .navbar ul li a:hover,
 .navbar ul li a.active {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--secondary-color);
     border-left: 3px solid var(--accent-color);
+    color: #fff;
 }
 
 .header-content .hamburger {
@@ -404,12 +411,11 @@ address {
 /* ===== DISCOVER PAGE STYLES ===== */
 
 .visit-message {
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     color: #fff;
     padding: 1rem;
     text-align: center;
-    margin: 1rem 0;
-    border-radius: 4px;
+    margin: 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -569,18 +575,18 @@ address {
     transform: translateY(-2px);
 }
 
-.like-btn {
-    background-color: #ef4444 !important;
+.attraction-card button.like-btn {
+    background-color: #ef4444;
 }
 
-.like-btn:hover {
-    background-color: #dc2626 !important;
+.attraction-card button.like-btn:hover {
+    background-color: #dc2626;
 }
 
 /* Mobile: No hover effects on images */
 @media (max-width: 640px) {
     .attraction-card img:hover {
-        transform: none !important;
-        filter: none !important;
+        transform: none;
+        filter: none;
     }
 }

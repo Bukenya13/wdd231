@@ -3,44 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the attractions and features of our area">
+    <meta name="description" content="Discover the top attractions, local landmarks, and community features of the Springfield Chamber of Commerce area">
+    <meta name="author" content="Bukenya">
+    <meta property="og:title" content="Discover Our Area - Springfield Chamber of Commerce">
+    <meta property="og:description" content="Explore the top attractions, parks, museums, and community features of the Springfield Chamber of Commerce area">
+    <meta property="og:image" content="https://bukenya13.github.io/wdd231/chamber/images/discover/og-image.webp">
+    <meta property="og:url" content="https://bukenya13.github.io/wdd231/chamber/discover.html">
     <title>Discover Our Area | Chamber of Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/medium.css">
     <link rel="stylesheet" href="styles/large.css">
     <link rel="icon" href="favicon.ico">
     <script src="scripts/discover.js" type="module" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.getElementById('hamburger');
-            const navMenu = document.getElementById('nav-menu');
-            const navClose = document.getElementById('nav-close');
-            const navOverlay = document.getElementById('nav-overlay');
-
-            hamburger.addEventListener('click', () => {
-                navMenu.classList.add('open');
-                navOverlay.classList.add('open');
-                hamburger.classList.add('open');
-            });
-
-            navClose.addEventListener('click', () => {
-                navMenu.classList.remove('open');
-                navOverlay.classList.remove('open');
-                hamburger.classList.remove('open');
-            });
-
-            navOverlay.addEventListener('click', () => {
-                navMenu.classList.remove('open');
-                navOverlay.classList.remove('open');
-                hamburger.classList.remove('open');
-            });
-        });
-    </script>
+    <script src="scripts/navigation.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Chamber of Commerce</h1>
+            <span class="logo-title">Chamber of Commerce</span>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
