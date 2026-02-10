@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FitCore Gym Member Directory - Connect with our fitness community">
+    <meta name="author" content="Student Name">
+    <title>Member Directory - FitCore Gym</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💪</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html"><span class="emoji">💪</span> FitCore Gym</a></h1>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#wellness">Wellness</a></li>
+                    <li><a href="directory.html" class="active">Members</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="directory-container">
+        <div class="container">
+            <h1>Member Directory</h1>
+            <p class="subtitle">Connect with our community of fitness enthusiasts</p>
+            
+            <div class="directory-controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search members...">
+                    <button id="searchBtn">Search</button>
+                </div>
+                <div class="view-toggle">
+                    <button id="gridView" class="view-btn active" aria-label="Grid view">Grid</button>
+                    <button id="listView" class="view-btn" aria-label="List view">List</button>
+                </div>
+                <div class="sorting">
+                    <label for="sortSelect">Sort by:</label>
+                    <select id="sortSelect">
+                        <option value="name">Name</option>
+                        <option value="joinDate">Join Date</option>
+                        <option value="level">Fitness Level</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">All Members</button>
+                <button class="filter-btn" data-filter="beginner">Beginners</button>
+                <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+                <button class="filter-btn" data-filter="advanced">Advanced</button>
+                <button class="filter-btn" data-filter="trainer">Trainers</button>
+            </div>
+
+            <div class="stats-bar">
+                <p>Showing <span id="memberCount">0</span> members | <span id="filterInfo">All members displayed</span></p>
+            </div>
+
+            <div id="membersContainer" class="members-grid">
+                <!-- Members loaded dynamically from JSON -->
+            </div>
+
+            <div class="pagination">
+                <button id="prevBtn" disabled>Previous</button>
+                <span id="pageInfo">Page 1 of 1</span>
+                <button id="nextBtn" disabled>Next</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 FitCore Gym Fitness & Wellness Center. All rights reserved.</p>
+            <p>
+                <a href="../attributions.html">View Attributions</a> | 
+                <a href="https://youtube.com/your-video-link" target="_blank" rel="noopener">Project Video Demo</a>
+            </p>
+        </div>
+    </footer>
+
+    <div class="modal" id="memberModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalContent">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../scripts/directory.js"></script>
+    <script type="module" src="../scripts/modal.js"></script>
+</body>
+</html>
