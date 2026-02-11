@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FitCore Gym - Transform your body and mind with professional fitness training, yoga classes, spa facilities, and wellness programs.">
-    <meta name="author" content="Student Name">
+    <meta name="description" content="Transform your body and mind at FitCore Gym. Professional fitness training, yoga classes, spa facilities, and personalized wellness programs for all levels.">
+    <meta name="author" content="John Doe">
     <meta property="og:title" content="FitCore Gym Fitness & Wellness Center">
-    <meta property="og:description" content="Premium fitness center with expert trainers, yoga, spa, and sauna facilities.">
+    <meta property="og:description" content="Premium fitness center with expert trainers, yoga, spa, and sauna facilities. Transform your body and mind today.">
     <meta property="og:image" content="https://yourusername.github.io/wdd231/finalproject/images/fitcore-hero.jpg">
     <meta property="og:url" content="https://yourusername.github.io/wdd231/finalproject/">
+    <meta property="og:type" content="website">
     <title>FitCore Gym Fitness - Transform Your Body, Transform Your Life</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💪</text></svg>">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
                 <h1><span class="emoji">💪</span> FitCore Gym</h1>
             </div>
-            <button class="hamburger" aria-label="Toggle navigation">
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <nav class="navbar">
+            <nav class="navbar" aria-label="Main navigation">
                 <ul>
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -40,136 +44,138 @@
         </div>
     </header>
 
-    <section id="home" class="hero" aria-label="Hero section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h2>Transform Your Body, Transform Your Life</h2>
-            <p>Your ultimate fitness destination with professional trainers, spa, sauna & state-of-the-art equipment</p>
-            <button class="cta-btn" id="openMembershipModal">Get Started Today</button>
-        </div>
-    </section>
+    <main id="main-content">
+        <section id="home" class="hero" aria-label="Hero section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>Transform Your Body, Transform Your Life</h2>
+                <p>Your ultimate fitness destination with professional trainers, spa, sauna & state-of-the-art equipment</p>
+                <button class="cta-btn" id="openMembershipModal">Get Started Today</button>
+            </div>
+        </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About FitCore Gym Fitness</h2>
-            <p>At FitCore Gym, we provide a comprehensive fitness and wellness experience tailored to your needs. Our mission is to help you achieve your fitness goals in a supportive and motivating environment.</p>
-            <div class="about-features">
-                <div class="feature-card">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop" alt="Modern gym equipment" loading="lazy">
-                    <div class="feature-content">
-                        <h3>✓ Expert Trainers</h3>
-                        <p>Certified professionals ready to guide your fitness journey</p>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About FitCore Gym Fitness</h2>
+                <p>At FitCore Gym, we provide a comprehensive fitness and wellness experience tailored to your needs. Our mission is to help you achieve your fitness goals in a supportive and motivating environment.</p>
+                <div class="about-features">
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop" alt="Expert personal trainer assisting client with weights" loading="lazy">
+                        <div class="feature-content">
+                            <h3>✓ Expert Trainers</h3>
+                            <p>Certified professionals ready to guide your fitness journey</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=300&fit=crop" alt="Modern gym equipment with treadmill and weight machines" loading="lazy">
+                        <div class="feature-content">
+                            <h3>✓ Modern Equipment</h3>
+                            <p>Latest fitness technology and weight training equipment</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&h=300&fit=crop" alt="Group yoga class in a bright studio" loading="lazy">
+                        <div class="feature-content">
+                            <h3>✓ Yoga & Wellness</h3>
+                            <p>Peaceful yoga studios and meditation spaces</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1544367567-0d6fcffe7f1f?w=400&h=300&fit=crop" alt="Relaxing spa facilities with warm lighting" loading="lazy">
+                        <div class="feature-content">
+                            <h3>✓ Spa & Sauna</h3>
+                            <p>Relax in our premium sauna, steam bath & spa facilities</p>
+                        </div>
                     </div>
                 </div>
-                <div class="feature-card">
-                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=300&fit=crop" alt="Yoga class" loading="lazy">
-                    <div class="feature-content">
-                        <h3>✓ Modern Equipment</h3>
-                        <p>Latest fitness technology and weight training equipment</p>
+            </div>
+        </section>
+
+        <section id="services" class="services" aria-label="Services section">
+            <div class="services-overlay"></div>
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <span class="icon" aria-hidden="true">💼</span>
+                        <h3>Personal Training</h3>
+                        <p>One-on-one coaching to achieve your specific fitness goals</p>
+                    </div>
+                    <div class="service-item">
+                        <span class="icon" aria-hidden="true">🧘</span>
+                        <h3>Yoga Classes</h3>
+                        <p>Hatha, Vinyasa, and Restorative yoga with experienced instructors</p>
+                    </div>
+                    <div class="service-item">
+                        <span class="icon" aria-hidden="true">🥗</span>
+                        <h3>Nutrition Counseling</h3>
+                        <p>Expert guidance on healthy eating for optimal results</p>
+                    </div>
+                    <div class="service-item">
+                        <span class="icon" aria-hidden="true">🛀</span>
+                        <h3>Spa & Wellness</h3>
+                        <p>Premium sauna, steam bath, and relaxation services</p>
                     </div>
                 </div>
-                <div class="feature-card">
-                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&h=300&fit=crop" alt="Group fitness class" loading="lazy">
-                    <div class="feature-content">
-                        <h3>✓ Yoga & Wellness</h3>
-                        <p>Peaceful yoga studios and meditation spaces</p>
+            </div>
+        </section>
+
+        <section class="featured-members">
+            <div class="container">
+                <h2>Featured Members</h2>
+                <div id="featuredMembersContainer" class="members-preview">
+                    <!-- Dynamically loaded from members.json -->
+                </div>
+                <a href="pages/directory.html" class="cta-btn secondary">View All Members</a>
+            </div>
+        </section>
+
+        <section id="wellness" class="wellness-highlight">
+            <div class="wellness-overlay"></div>
+            <div class="container">
+                <h2>Relax & Rejuvenate</h2>
+                <p>Experience our world-class sauna, steam bath, and spa facilities</p>
+                <div class="wellness-features">
+                    <div class="wellness-item">
+                        <h3>🔥 Sauna Therapy</h3>
+                        <p>Detox and relax in our infrared sauna</p>
+                    </div>
+                    <div class="wellness-item">
+                        <h3>💨 Steam Bath</h3>
+                        <p>Rejuvenate your body and mind</p>
+                    </div>
+                    <div class="wellness-item">
+                        <h3>💆 Spa Services</h3>
+                        <p>Professional massage and wellness treatments</p>
                     </div>
                 </div>
-                <div class="feature-card">
-                    <img src="https://images.unsplash.com/photo-1544367567-0d6fcffe7f1f?w=400&h=300&fit=crop" alt="Spa facilities" loading="lazy">
-                    <div class="feature-content">
-                        <h3>✓ Spa & Sauna</h3>
-                        <p>Relax in our premium sauna, steam bath & spa facilities</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 Location</h3>
+                        <p>123 Fitness Avenue<br>Gym City, ST 12345</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Phone</h3>
+                        <p><a href="tel:+256750289658">(+256) 750-289-658</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>✉️ Email</h3>
+                        <p><a href="mailto:info@fitcoregym.com">info@fitcoregym.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📋 Membership Form</h3>
+                        <p><a href="#membership-form" id="openFormBtn">Apply for Membership</a></p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="services" class="services" aria-label="Services section">
-        <div class="services-overlay"></div>
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <span class="icon">💼</span>
-                    <h3>Personal Training</h3>
-                    <p>One-on-one coaching to achieve your specific fitness goals</p>
-                </div>
-                <div class="service-item">
-                    <span class="icon">🧘</span>
-                    <h3>Yoga Classes</h3>
-                    <p>Hatha, Vinyasa, and Restorative yoga with experienced instructors</p>
-                </div>
-                <div class="service-item">
-                    <span class="icon">🥗</span>
-                    <h3>Nutrition Counseling</h3>
-                    <p>Expert guidance on healthy eating for optimal results</p>
-                </div>
-                <div class="service-item">
-                    <span class="icon">🛀</span>
-                    <h3>Spa & Wellness</h3>
-                    <p>Premium sauna, steam bath, and relaxation services</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="featured-members">
-        <div class="container">
-            <h2>Featured Members</h2>
-            <div id="featuredMembersContainer" class="members-preview">
-                <!-- Dynamically loaded from members.json -->
-            </div>
-            <a href="pages/directory.html" class="cta-btn secondary">View All Members</a>
-        </div>
-    </section>
-
-    <section id="wellness" class="wellness-highlight">
-        <div class="wellness-overlay"></div>
-        <div class="container">
-            <h2>Relax & Rejuvenate</h2>
-            <p>Experience our world-class sauna, steam bath, and spa facilities</p>
-            <div class="wellness-features">
-                <div class="wellness-item">
-                    <h3>🔥 Sauna Therapy</h3>
-                    <p>Detox and relax in our infrared sauna</p>
-                </div>
-                <div class="wellness-item">
-                    <h3>💨 Steam Bath</h3>
-                    <p>Rejuvenate your body and mind</p>
-                </div>
-                <div class="wellness-item">
-                    <h3>💆 Spa Services</h3>
-                    <p>Professional massage and wellness treatments</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>📍 Location</h3>
-                    <p>123 Fitness Avenue<br>Gym City, ST 12345</p>
-                </div>
-                <div class="contact-item">
-                    <h3>📞 Phone</h3>
-                    <p><a href="tel:+256750289658">(+256) 750-289-658</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>✉️ Email</h3>
-                    <p><a href="mailto:info@fitcoregym.com">info@fitcoregym.com</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>📋 Membership Form</h3>
-                    <p><a href="#membership-form" id="openFormBtn">Apply for Membership</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
@@ -177,15 +183,15 @@
             <p>Transforming lives, one workout at a time.</p>
             <p>
                 <a href="attributions.html">View Attributions</a> | 
-                <a href="https://youtube.com/your-video-link" target="_blank" rel="noopener">Project Video Demo</a>
+                <a href="https://youtube.com/your-video-link" target="_blank" rel="noopener noreferrer">Project Video Demo</a>
             </p>
         </div>
     </footer>
 
-    <div class="modal" id="membershipModal">
+    <div class="modal" id="membershipModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Membership Plans</h2>
+            <button class="close-modal" aria-label="Close modal">&times;</button>
+            <h2 id="modalTitle">Membership Plans</h2>
             <div class="modal-body">
                 <div class="membership-plan">
                     <h3>Basic Plan</h3>
@@ -221,10 +227,10 @@
         </div>
     </div>
 
-    <div class="modal" id="membershipFormModal">
+    <div class="modal" id="membershipFormModal" role="dialog" aria-labelledby="formModalTitle" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Membership Application</h2>
+            <button class="close-modal" aria-label="Close modal">&times;</button>
+            <h2 id="formModalTitle">Membership Application</h2>
             <form id="membershipForm" action="pages/form-action.html" method="GET">
                 <div class="form-group">
                     <label for="fullName">Full Name *</label>

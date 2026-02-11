@@ -1,3 +1,5 @@
+/* styles/style.css */
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -31,6 +33,22 @@ body {
     padding: 0 20px;
 }
 
+/* Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1001;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 /* Header and Navigation */
 .main-header {
     background-color: var(--dark-color);
@@ -51,16 +69,10 @@ body {
     margin: 0 auto;
 }
 
-.logo h1,
-.logo p {
+.logo h1 {
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
-}
-
-.logo a {
-    color: white;
-    text-decoration: none;
 }
 
 .emoji {
@@ -511,6 +523,11 @@ body {
     color: var(--text-light);
     background: none;
     border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content h2 {
@@ -599,365 +616,7 @@ body {
     margin-right: 0.5rem;
 }
 
-/* Directory Page Styles */
-.directory-container {
-    margin-top: 80px;
-    padding: 3rem 0;
-}
-
-.directory-container h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--dark-color);
-}
-
-.subtitle {
-    text-align: center;
-    color: var(--text-light);
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-}
-
-.directory-controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: white;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-}
-
-.search-box {
-    display: flex;
-    gap: 0.5rem;
-    flex: 1;
-    min-width: 200px;
-}
-
-.search-box input {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: var(--border-radius);
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-}
-
-.search-box input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-.search-box button {
-    padding: 0.75rem 1.5rem;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.search-box button:hover {
-    background-color: #e55a2e;
-}
-
-.view-toggle {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.view-btn {
-    padding: 0.75rem 1.5rem;
-    border: 2px solid var(--secondary-color);
-    background: white;
-    color: var(--secondary-color);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.view-btn.active,
-.view-btn:hover {
-    background-color: var(--secondary-color);
-    color: white;
-}
-
-.sorting {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.sorting label {
-    font-weight: 600;
-    color: var(--text-light);
-}
-
-.sorting select {
-    padding: 0.75rem 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: var(--border-radius);
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-}
-
-.filter-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.filter-btn {
-    padding: 0.5rem 1.25rem;
-    border: 2px solid #006d8a;
-    background: white;
-    color: #006d8a;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-    background-color: #006d8a;
-    color: white;
-}
-
-.stats-bar {
-    margin-bottom: 1.5rem;
-    padding: 0.75rem 1rem;
-    background: white;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    font-size: 0.9rem;
-    color: var(--text-light);
-}
-
-/* Members Grid & List */
-.members-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.members-grid.list-view {
-    grid-template-columns: 1fr;
-}
-
-.members-grid.list-view .member-card {
-    display: flex;
-    flex-direction: row;
-}
-
-.members-grid.list-view .member-card img {
-    width: 150px;
-    height: auto;
-    min-height: 150px;
-}
-
-.members-grid .member-card img {
-    height: 200px;
-}
-
-.member-info .tagline {
-    font-style: italic;
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-}
-
-.member-info .specialty {
-    display: inline-block;
-    padding: 0.2rem 0.6rem;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 15px;
-    font-size: 0.75rem;
-    margin-bottom: 0.5rem;
-}
-
-.membership-badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: white;
-}
-
-.membership-badge.gold {
-    background-color: #d4af37;
-}
-
-.membership-badge.silver {
-    background-color: #a0a0a0;
-}
-
-.membership-badge.platinum {
-    background-color: #7b68ee;
-}
-
-.membership-badge.bronze {
-    background-color: #cd7f32;
-}
-
-.visit-btn {
-    display: inline-block;
-    margin-top: 0.75rem;
-    padding: 0.4rem 1rem;
-    background-color: var(--secondary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.visit-btn:hover {
-    background-color: #003c6b;
-}
-
-/* Pagination */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.pagination button {
-    padding: 0.75rem 1.5rem;
-    border: 2px solid var(--secondary-color);
-    background: white;
-    color: var(--secondary-color);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.pagination button:hover:not(:disabled) {
-    background-color: var(--secondary-color);
-    color: white;
-}
-
-.pagination button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-#pageInfo {
-    font-weight: 600;
-    color: var(--text-light);
-}
-
-/* Form Action Page */
-.form-action-container {
-    margin-top: 80px;
-    padding: 3rem 0;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-}
-
-.confirmation-card {
-    background: white;
-    padding: 3rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.confirmation-card h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--dark-color);
-}
-
-.confirmation-card > p {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
-
-.application-details {
-    text-align: left;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: var(--light-color);
-    border-radius: var(--border-radius);
-}
-
-.application-details h2 {
-    color: var(--dark-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.application-details .detail-item {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #e0e0e0;
-    display: flex;
-    gap: 1rem;
-}
-
-.application-details .detail-item:last-child {
-    border-bottom: none;
-}
-
-.application-details .detail-label {
-    font-weight: 600;
-    color: var(--dark-color);
-    min-width: 120px;
-}
-
-.application-details .detail-value {
-    color: var(--text-light);
-}
-
-.next-steps {
-    text-align: left;
-    margin-bottom: 2rem;
-}
-
-.next-steps h3 {
-    color: var(--dark-color);
-    margin-bottom: 1rem;
-}
-
-.next-steps ol {
-    padding-left: 1.5rem;
-}
-
-.next-steps li {
-    margin-bottom: 0.5rem;
-    color: var(--text-light);
-}
-
-.action-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* Responsive Design */
+/* Responsive Design - Basic */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -1016,31 +675,6 @@ body {
         font-size: 2rem;
     }
 
-    .directory-controls {
-        flex-direction: column;
-    }
-
-    .search-box {
-        width: 100%;
-    }
-
-    .members-grid.list-view .member-card {
-        flex-direction: column;
-    }
-
-    .members-grid.list-view .member-card img {
-        width: 100%;
-        height: 200px;
-    }
-
-    .confirmation-card {
-        padding: 2rem 1rem;
-    }
-
-    .confirmation-card h1 {
-        font-size: 1.8rem;
-    }
-
     .modal-content {
         width: 95%;
         padding: 1.5rem;
@@ -1055,13 +689,5 @@ body {
     .cta-btn {
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
-    }
-
-    .members-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .filter-section {
-        justify-content: center;
     }
 }
