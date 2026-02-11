@@ -34,17 +34,17 @@ if (openFormBtn && membershipFormModal) {
 }
 
 // "Join Now" button in plans modal opens form modal
-if (membershipModal) {
-    const joinNowBtn = membershipModal.querySelector('.cta-btn');
-    if (joinNowBtn) {
-        joinNowBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+const joinNowBtn = document.getElementById('joinNowBtn');
+if (joinNowBtn) {
+    joinNowBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (membershipModal) {
             membershipModal.classList.remove('active');
-            if (membershipFormModal) {
-                membershipFormModal.classList.add('active');
-            }
-        });
-    }
+        }
+        if (membershipFormModal) {
+            membershipFormModal.classList.add('active');
+        }
+    });
 }
 
 // ========================================

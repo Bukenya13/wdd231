@@ -1,0 +1,132 @@
+/* Responsive Design - Additional breakpoints */
+
+/* Tablet landscape */
+@media (max-width: 1024px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-features,
+    .services-grid,
+    .wellness-features,
+    .contact-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-color);
+        padding: 1rem 0;
+        box-shadow: var(--shadow);
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+    }
+
+    .navbar li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar a {
+        display: block;
+        padding: 1rem;
+        border-radius: 0;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero {
+        min-height: 400px;
+        height: auto;
+        padding: 4rem 1rem;
+    }
+
+    .about h2,
+    .services h2,
+    .contact h2,
+    .wellness-highlight h2,
+    .featured-members h2 {
+        font-size: 2rem;
+    }
+
+    .about-features,
+    .services-grid,
+    .wellness-features,
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .directory-controls {
+        flex-direction: column;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .members-grid.list-view .member-card {
+        flex-direction: column;
+    }
+
+    .members-grid.list-view .member-card img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .confirmation-card {
+        padding: 2rem 1rem;
+    }
+
+    .confirmation-card h1 {
+        font-size: 1.8rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .cta-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-section {
+        justify-content: center;
+    }
+}
