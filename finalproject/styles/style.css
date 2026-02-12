@@ -616,6 +616,59 @@ body {
     margin-right: 0.5rem;
 }
 
+/* Attributions Page */
+.attributions-container {
+    margin-top: 80px;
+    padding: 3rem 0;
+    min-height: 70vh;
+}
+
+.attributions-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--dark-color);
+}
+
+.attribution-section {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.attribution-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.attribution-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.attribution-section li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: var(--text-light);
+}
+
+.attribution-section li:last-child {
+    border-bottom: none;
+}
+
+.attribution-section a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.attribution-section a:hover {
+    color: var(--primary-color);
+}
+
 /* Responsive Design - Basic */
 @media (max-width: 768px) {
     .hamburger {
