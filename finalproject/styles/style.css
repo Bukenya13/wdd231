@@ -53,7 +53,7 @@ body {
 .main-header {
     background-color: var(--dark-color);
     color: white;
-    position: fixed;
+    position: relative;
     width: 100%;
     top: 0;
     z-index: 1000;
